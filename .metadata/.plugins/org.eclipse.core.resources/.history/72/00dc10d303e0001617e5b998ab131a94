@@ -1,0 +1,31 @@
+package com.sports.event.algorithms;
+
+import com.sports.event.generics.DataBaseCalls;
+
+public class DrawTeamMatches {
+
+	public void DeriveNoOfMatches(int gameId,String round_Type){
+		
+		
+		DataBaseCalls dbCalls = new DataBaseCalls();
+		
+		// ## Go in games table and search for respective Game Type
+		//String gameType = database call;
+		//String gameType = "TEAM";
+		String gameType = "IND";
+		int lhs = 2;
+		int rhs = 0;
+		
+		if(gameType.equalsIgnoreCase("IND")){
+			// ## Go in PART_GAME Table and get 
+			
+			int participatsCount = dbCalls.getCount();
+			
+			
+			
+		}else if(gameType.equalsIgnoreCase("TEAM")){
+			
+		}
+	}
+	
+}

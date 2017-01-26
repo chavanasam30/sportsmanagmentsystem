@@ -1,0 +1,111 @@
+package com.sports.algorithms;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.sports.event.generics.DataBaseCalls;
+
+public class DrawTeamMatches {
+
+	
+	public static void main(String args[]){
+		DeriveNoOfMatches(2135,"1");
+	}
+	
+	public static void DeriveNoOfMatches(int gameId,String round_Type){
+
+		DataBaseCalls dbCalls = null;
+		try {
+			dbCalls = new DataBaseCalls();
+		} catch (ClassNotFoundException e1) {
+			e1.printStackTrace();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+		// ## Go in games table and search for respective Game Type
+		String gameType = "";
+		try {
+			gameType = dbCalls.getGameDetail(gameId);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(" Game Type " + gameType);
+		int participatsCount = 0;
+		int lowerLimit = 0;
+		int extraParticipant = 0;
+		int totalMatches = 0;
+		
+		ArrayList<Integer> participantList = new ArrayList<Integer>();
+		
+		if(gameType.equalsIgnoreCase("IND")){
+			// ## Go in PART_GAME Table and get
+			participantList=dbCalls.getCount("PARTI_GAME",gameId);			
+		}else if(gameType.equalsIgnoreCase("TEAM")){
+			// ## Go in PART_GAME Table and get 
+			participantList=dbCalls.getCount("TEAM_GAME",gameId);
+		}
+		System.out.println("Participant List " + participantList);
+		
+		participatsCount = participantList.size();		
+		System.out.println("Toatal Participant :" + participatsCount);
+			
+		lowerLimit = getMatchCount(participatsCount);
+		System.out.println("Lower Limit  : " + lowerLimit);
+			
+		if(participatsCount>lowerLimit){
+			extraParticipant = participatsCount - lowerLimit;
+			System.out.println("totalMatches at Round 0 (extraParticipant) : " + extraParticipant);
+				
+		}
+			
+		totalMatches = lowerLimit / 2;
+		if(extraParticipant ==1){
+			totalMatches++;
+		}				
+		System.out.println("totalMatches at Round 1 :" + totalMatches);
+
+	}
+	
+	
+	private static int getMatchCount(int participatsCount){
+
+		int lhs = 2;
+		int rhs = 0;
+		int lowerLimit = 0;
+		
+		while(participatsCount > rhs){
+			rhs = lhs * 2;				
+			if(participatsCount >= lhs && participatsCount < rhs){
+				lowerLimit = lhs;
+				//System.out.println("Lower Limit is :" + lowerLimit);
+				break;
+			}		
+			lhs = rhs;
+		}
+		return lowerLimit;
+	}
+	
+	private static Map<Integer,String> getMatchSchedule(ArrayList participantList,int TotalMatches){
+		
+		Map<Integer,String> matchParticipantPair = new HashMap<Integer, String>();
+		
+		for(int i =0 ; i< TotalMatches;i++){
+			
+			participantList.get(i);
+			participantList.get(i+TotalMatches);
+			
+			matchParticipantPair.put(i+1, String.valueOf(participantList.get(i))+","+String.valueOf(participantList.get(i+TotalMatches)));
+		}
+		
+		return matchParticipantPair;
+		
+		
+	}
+	
+}

@@ -1,0 +1,17 @@
+package com.devrvan.sports.dbconnections;
+
+import java.sql.*;
+
+public class DataBaseConnection {
+
+	
+	public static void main(String args[]) {
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		
+		Connection con = DriverManager.getConnection("jdbc:odbc:thin@localhost:3306", "root", "sampada30");
+	}
+
+	
+	
+}

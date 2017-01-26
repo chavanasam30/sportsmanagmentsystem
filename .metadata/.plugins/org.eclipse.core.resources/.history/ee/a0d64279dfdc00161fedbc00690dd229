@@ -1,0 +1,5 @@
+package com.devrvan.sports.dbconnections;
+
+public class DataBaseConnection {
+
+}

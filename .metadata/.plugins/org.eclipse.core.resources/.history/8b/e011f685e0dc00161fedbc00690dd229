@@ -1,0 +1,11 @@
+package com.devrvan.sports.dbconnections;
+
+import java.sql.*;
+public class DataBaseConnection {
+
+	
+	public static void main(String args[]){}
+
+	Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+	
+}

@@ -1,0 +1,759 @@
+!SESSION 2017-01-17 22:59:59.245 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-17 23:30:46.779
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2017-01-21 22:13:00.815 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 00:37:48.018
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:37:48.018
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:37:48.018
+!MESSAGE Software being installed: Git integration for Eclipse 4.6.0.201612231935-r (org.eclipse.egit.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:37:48.018
+!MESSAGE Missing requirement: Git integration for Eclipse - UI 4.6.0.201612231935-r (org.eclipse.egit.ui 4.6.0.201612231935-r) requires 'bundle org.eclipse.team.core [3.6.100,4.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:37:48.018
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:37:48.018
+!MESSAGE From: Git integration for Eclipse 4.6.0.201612231935-r (org.eclipse.egit.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:37:48.018
+!MESSAGE To: org.eclipse.egit.ui [4.6.0.201612231935-r]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 00:37:48.033
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:37:48.033
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:37:48.033
+!MESSAGE Software being installed: Git integration for Eclipse 4.6.0.201612231935-r (org.eclipse.egit.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:37:48.033
+!MESSAGE Missing requirement: Git integration for Eclipse - UI 4.6.0.201612231935-r (org.eclipse.egit.ui 4.6.0.201612231935-r) requires 'bundle org.eclipse.team.core [3.6.100,4.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:37:48.033
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:37:48.033
+!MESSAGE From: Git integration for Eclipse 4.6.0.201612231935-r (org.eclipse.egit.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:37:48.033
+!MESSAGE To: org.eclipse.egit.ui [4.6.0.201612231935-r]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 00:38:48.257
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:38:48.257
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.257
+!MESSAGE Software being installed: Java implementation of Git - Command Line Interface 4.6.0.201612231935-r (org.eclipse.jgit.pgm.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.257
+!MESSAGE Missing requirement: Apache HttpComponents HttpClient 4.3.6.v201511171540 (org.apache.httpcomponents.httpclient 4.3.6.v201511171540) requires 'package org.apache.commons.codec.binary 1.6.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:38:48.257
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.257
+!MESSAGE From: JGit Apache httpclient based HTTP support 4.6.0.201612231935-r (org.eclipse.jgit.http.apache 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.257
+!MESSAGE To: package org.apache.http.client [4.3.0,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:38:48.257
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.257
+!MESSAGE From: JGit Command Line Interface 4.6.0.201612231935-r (org.eclipse.jgit.pgm 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.257
+!MESSAGE To: package org.eclipse.jgit.transport.http.apache [4.6.0,4.7.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:38:48.257
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.257
+!MESSAGE From: Java implementation of Git - Command Line Interface 4.6.0.201612231935-r (org.eclipse.jgit.pgm.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.257
+!MESSAGE To: org.eclipse.jgit.pgm [4.6.0.201612231935-r]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 00:38:48.281
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:38:48.281
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.281
+!MESSAGE Software being installed: Java implementation of Git - Command Line Interface 4.6.0.201612231935-r (org.eclipse.jgit.pgm.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.281
+!MESSAGE Missing requirement: Apache HttpComponents HttpClient 4.3.6.v201511171540 (org.apache.httpcomponents.httpclient 4.3.6.v201511171540) requires 'package org.apache.commons.codec.binary 1.6.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:38:48.281
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.282
+!MESSAGE From: JGit Apache httpclient based HTTP support 4.6.0.201612231935-r (org.eclipse.jgit.http.apache 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.282
+!MESSAGE To: package org.apache.http.client [4.3.0,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:38:48.282
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.282
+!MESSAGE From: JGit Command Line Interface 4.6.0.201612231935-r (org.eclipse.jgit.pgm 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.282
+!MESSAGE To: package org.eclipse.jgit.transport.http.apache [4.6.0,4.7.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 00:38:48.282
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.282
+!MESSAGE From: Java implementation of Git - Command Line Interface 4.6.0.201612231935-r (org.eclipse.jgit.pgm.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 00:38:48.282
+!MESSAGE To: org.eclipse.jgit.pgm [4.6.0.201612231935-r]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 01:02:44.403
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE Software being installed: Eclipse GitHub integration with task focused interface 4.6.0.201612231935-r (org.eclipse.mylyn.github.feature.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE Software currently installed: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE Team Support Core 3.8.0.v20160418-1534 (org.eclipse.team.core 3.8.0.v20160418-1534)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE Team Support Core 3.6.0.I20110525-0800 (org.eclipse.team.core 3.6.0.I20110525-0800)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE From: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE To: org.eclipse.epp.package.jee.feature.feature.group [1.4.2.20120213-0813]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE From: Git Team Provider UI 4.4.0.201606070830-r (org.eclipse.egit.ui 4.4.0.201606070830-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE To: bundle org.eclipse.team.core [3.6.100,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE From: Git Team Provider UI 4.4.1.201607150455-r (org.eclipse.egit.ui 4.4.1.201607150455-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE To: bundle org.eclipse.team.core [3.6.100,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE From: Git integration for Eclipse - UI 4.6.0.201612231935-r (org.eclipse.egit.ui 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE To: bundle org.eclipse.team.core [3.6.100,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE From: Java EE IDE Feature 1.4.2.20120213-0813 (org.eclipse.epp.package.jee.feature.feature.group 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE To: org.eclipse.platform.feature.group [3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE From: Eclipse GitHub integration with task focused interface 4.6.0.201612231935-r (org.eclipse.mylyn.github.feature.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE To: org.eclipse.mylyn.github.ui [4.6.0.201612231935-r]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE From: Mylyn GitHub Connector UI 4.6.0.201612231935-r (org.eclipse.mylyn.github.ui 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE To: package org.eclipse.egit.ui [4.0.0,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.403
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE From: Eclipse Platform 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q (org.eclipse.platform.feature.group 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.403
+!MESSAGE To: org.eclipse.team.core [3.6.0.I20110525-0800]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 01:02:44.417
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.417
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.417
+!MESSAGE Software being installed: Eclipse GitHub integration with task focused interface 4.6.0.201612231935-r (org.eclipse.mylyn.github.feature.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.417
+!MESSAGE Software currently installed: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.417
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.417
+!MESSAGE Team Support Core 3.8.0.v20160418-1534 (org.eclipse.team.core 3.8.0.v20160418-1534)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.417
+!MESSAGE Team Support Core 3.6.0.I20110525-0800 (org.eclipse.team.core 3.6.0.I20110525-0800)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.417
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.417
+!MESSAGE From: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.417
+!MESSAGE To: org.eclipse.epp.package.jee.feature.feature.group [1.4.2.20120213-0813]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.417
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.417
+!MESSAGE From: Git Team Provider UI 4.4.0.201606070830-r (org.eclipse.egit.ui 4.4.0.201606070830-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.417
+!MESSAGE To: bundle org.eclipse.team.core [3.6.100,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.418
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE From: Git Team Provider UI 4.4.1.201607150455-r (org.eclipse.egit.ui 4.4.1.201607150455-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE To: bundle org.eclipse.team.core [3.6.100,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.418
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE From: Git integration for Eclipse - UI 4.6.0.201612231935-r (org.eclipse.egit.ui 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE To: bundle org.eclipse.team.core [3.6.100,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.418
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE From: Java EE IDE Feature 1.4.2.20120213-0813 (org.eclipse.epp.package.jee.feature.feature.group 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE To: org.eclipse.platform.feature.group [3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.418
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE From: Eclipse GitHub integration with task focused interface 4.6.0.201612231935-r (org.eclipse.mylyn.github.feature.feature.group 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE To: org.eclipse.mylyn.github.ui [4.6.0.201612231935-r]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.418
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE From: Mylyn GitHub Connector UI 4.6.0.201612231935-r (org.eclipse.mylyn.github.ui 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE To: package org.eclipse.egit.ui [4.0.0,5.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:02:44.418
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE From: Eclipse Platform 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q (org.eclipse.platform.feature.group 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:02:44.418
+!MESSAGE To: org.eclipse.team.core [3.6.0.I20110525-0800]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 01:07:18.956
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.956
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE Software being installed: Git integration for Eclipse - auto-import for Eclipse >= 4.6 4.6.0.201612231935-r (org.eclipse.egit.ui.smartimport 4.6.0.201612231935-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE Software currently installed: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE Common Eclipse Runtime 3.8.0.v20160509-1230 (org.eclipse.equinox.common 3.8.0.v20160509-1230)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE Common Eclipse Runtime 3.6.0.v20110523 (org.eclipse.equinox.common 3.6.0.v20110523)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE From: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE To: org.eclipse.epp.package.jee.feature.feature.group [1.4.2.20120213-0813]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE From: Eclipse e4 Workbench 1.4.0.v20160517-1624 (org.eclipse.e4.ui.workbench 1.4.0.v20160517-1624)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE To: bundle org.eclipse.equinox.common [3.7.0,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE From: Git integration for Eclipse - auto-import for Eclipse >= 4.6 4.6.0.201612231935-r (org.eclipse.egit.ui.smartimport 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE To: bundle org.eclipse.ui.ide 3.12.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE From: Java EE IDE Feature 1.4.2.20120213-0813 (org.eclipse.epp.package.jee.feature.feature.group 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE To: org.eclipse.platform.feature.group [3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE From: Eclipse Platform 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q (org.eclipse.platform.feature.group 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE To: org.eclipse.rcp.feature.group [3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE From: Eclipse RCP 3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272 (org.eclipse.rcp.feature.group 3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE To: org.eclipse.equinox.common [3.6.0.v20110523]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE From: Eclipse IDE UI 3.12.0.v20160601-1609 (org.eclipse.ui.ide 3.12.0.v20160601-1609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE From: Eclipse IDE UI 3.12.1.v20160823-0925 (org.eclipse.ui.ide 3.12.1.v20160823-0925)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:18.957
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE From: Eclipse IDE UI 3.12.2.v20161115-1450 (org.eclipse.ui.ide 3.12.2.v20161115-1450)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:18.957
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 01:07:19.013
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.013
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.013
+!MESSAGE Software being installed: Git integration for Eclipse - auto-import for Eclipse >= 4.6 4.6.0.201612231935-r (org.eclipse.egit.ui.smartimport 4.6.0.201612231935-r)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.013
+!MESSAGE Software currently installed: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.013
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.013
+!MESSAGE Common Eclipse Runtime 3.8.0.v20160509-1230 (org.eclipse.equinox.common 3.8.0.v20160509-1230)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.013
+!MESSAGE Common Eclipse Runtime 3.6.0.v20110523 (org.eclipse.equinox.common 3.6.0.v20110523)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.013
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.013
+!MESSAGE From: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.013
+!MESSAGE To: org.eclipse.epp.package.jee.feature.feature.group [1.4.2.20120213-0813]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE From: Eclipse e4 Workbench 1.4.0.v20160517-1624 (org.eclipse.e4.ui.workbench 1.4.0.v20160517-1624)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE To: bundle org.eclipse.equinox.common [3.7.0,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE From: Git integration for Eclipse - auto-import for Eclipse >= 4.6 4.6.0.201612231935-r (org.eclipse.egit.ui.smartimport 4.6.0.201612231935-r)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE To: bundle org.eclipse.ui.ide 3.12.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE From: Java EE IDE Feature 1.4.2.20120213-0813 (org.eclipse.epp.package.jee.feature.feature.group 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE To: org.eclipse.platform.feature.group [3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE From: Eclipse Platform 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q (org.eclipse.platform.feature.group 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE To: org.eclipse.rcp.feature.group [3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE From: Eclipse RCP 3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272 (org.eclipse.rcp.feature.group 3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE To: org.eclipse.equinox.common [3.6.0.v20110523]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE From: Eclipse IDE UI 3.12.0.v20160601-1609 (org.eclipse.ui.ide 3.12.0.v20160601-1609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE From: Eclipse IDE UI 3.12.1.v20160823-0925 (org.eclipse.ui.ide 3.12.1.v20160823-0925)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:07:19.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE From: Eclipse IDE UI 3.12.2.v20161115-1450 (org.eclipse.ui.ide 3.12.2.v20161115-1450)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:07:19.014
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 01:11:24.095
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.095
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.095
+!MESSAGE Software being installed: Git integration for Eclipse - auto-import for Eclipse >= 4.6 4.7.0.201701201217 (org.eclipse.egit.ui.smartimport 4.7.0.201701201217)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.095
+!MESSAGE Software currently installed: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.095
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.095
+!MESSAGE Common Eclipse Runtime 3.8.0.v20160509-1230 (org.eclipse.equinox.common 3.8.0.v20160509-1230)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.095
+!MESSAGE Common Eclipse Runtime 3.6.0.v20110523 (org.eclipse.equinox.common 3.6.0.v20110523)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.095
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.095
+!MESSAGE From: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.095
+!MESSAGE To: org.eclipse.epp.package.jee.feature.feature.group [1.4.2.20120213-0813]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.095
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.095
+!MESSAGE From: Eclipse e4 Workbench 1.4.0.v20160517-1624 (org.eclipse.e4.ui.workbench 1.4.0.v20160517-1624)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.095
+!MESSAGE To: bundle org.eclipse.equinox.common [3.7.0,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.096
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE From: Git integration for Eclipse - auto-import for Eclipse >= 4.6 4.7.0.201701201217 (org.eclipse.egit.ui.smartimport 4.7.0.201701201217)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE To: bundle org.eclipse.ui.ide 3.12.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.096
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE From: Java EE IDE Feature 1.4.2.20120213-0813 (org.eclipse.epp.package.jee.feature.feature.group 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE To: org.eclipse.platform.feature.group [3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.096
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE From: Eclipse Platform 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q (org.eclipse.platform.feature.group 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE To: org.eclipse.rcp.feature.group [3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.096
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE From: Eclipse RCP 3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272 (org.eclipse.rcp.feature.group 3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE To: org.eclipse.equinox.common [3.6.0.v20110523]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.096
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE From: Eclipse IDE UI 3.12.0.v20160601-1609 (org.eclipse.ui.ide 3.12.0.v20160601-1609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.096
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE From: Eclipse IDE UI 3.12.1.v20160823-0925 (org.eclipse.ui.ide 3.12.1.v20160823-0925)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.096
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE From: Eclipse IDE UI 3.12.2.v20161115-1450 (org.eclipse.ui.ide 3.12.2.v20161115-1450)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.096
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-01-22 01:11:24.162
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.162
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.162
+!MESSAGE Software being installed: Git integration for Eclipse - auto-import for Eclipse >= 4.6 4.7.0.201701201217 (org.eclipse.egit.ui.smartimport 4.7.0.201701201217)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.162
+!MESSAGE Software currently installed: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.162
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.162
+!MESSAGE Common Eclipse Runtime 3.8.0.v20160509-1230 (org.eclipse.equinox.common 3.8.0.v20160509-1230)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.162
+!MESSAGE Common Eclipse Runtime 3.6.0.v20110523 (org.eclipse.equinox.common 3.6.0.v20110523)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.163
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE From: Eclipse IDE for Java EE Developers 1.4.2.20120213-0813 (epp.package.jee 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE To: org.eclipse.epp.package.jee.feature.feature.group [1.4.2.20120213-0813]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.163
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE From: Eclipse e4 Workbench 1.4.0.v20160517-1624 (org.eclipse.e4.ui.workbench 1.4.0.v20160517-1624)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE To: bundle org.eclipse.equinox.common [3.7.0,4.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.163
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE From: Git integration for Eclipse - auto-import for Eclipse >= 4.6 4.7.0.201701201217 (org.eclipse.egit.ui.smartimport 4.7.0.201701201217)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE To: bundle org.eclipse.ui.ide 3.12.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.163
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE From: Java EE IDE Feature 1.4.2.20120213-0813 (org.eclipse.epp.package.jee.feature.feature.group 1.4.2.20120213-0813)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE To: org.eclipse.platform.feature.group [3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.163
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE From: Eclipse Platform 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q (org.eclipse.platform.feature.group 3.7.2.v20120207-1839-9gF7UHPDFxGjd-PqDr2jX_4yKaumkoHTz04_q-q)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE To: org.eclipse.rcp.feature.group [3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.163
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE From: Eclipse RCP 3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272 (org.eclipse.rcp.feature.group 3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE To: org.eclipse.equinox.common [3.6.0.v20110523]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.163
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE From: Eclipse IDE UI 3.12.0.v20160601-1609 (org.eclipse.ui.ide 3.12.0.v20160601-1609)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.163
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE From: Eclipse IDE UI 3.12.1.v20160823-0925 (org.eclipse.ui.ide 3.12.1.v20160823-0925)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-01-22 01:11:24.163
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE From: Eclipse IDE UI 3.12.2.v20161115-1450 (org.eclipse.ui.ide 3.12.2.v20161115-1450)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-01-22 01:11:24.163
+!MESSAGE To: bundle org.eclipse.e4.ui.workbench [1.3.0,2.0.0)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-01-22 01:11:49.539
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at https://repo.eclipse.org/content/groups/snapshots/org/eclipse/egit/org.eclipse.egit.repository/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:636)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2017-01-22 01:11:49.563
+!MESSAGE No repository found at https://repo.eclipse.org/content/groups/snapshots/org/eclipse/egit/org.eclipse.egit.repository/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2017-01-22 01:11:49.781
+!MESSAGE No repository found at https://repo.eclipse.org/content/groups/snapshots/org/eclipse/egit/org.eclipse.egit.repository/.
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-01-22 01:15:55.440
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at https://repo.eclipse.org/content/groups/snapshots/org/eclipse/egit/org.eclipse.egit.repository/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:636)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2017-01-22 01:15:55.441
+!MESSAGE No repository found at https://repo.eclipse.org/content/groups/snapshots/org/eclipse/egit/org.eclipse.egit.repository/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2017-01-22 01:15:55.477
+!MESSAGE No repository found at https://repo.eclipse.org/content/groups/snapshots/org/eclipse/egit/org.eclipse.egit.repository/.
+!SESSION 2017-01-22 01:21:46.765 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-22 01:22:04.914
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui.ide 4 4 2017-01-22 01:35:05.338
+!MESSAGE Problems occurred refreshing the selected resources.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2017-01-22 01:35:05.338
+!MESSAGE The project description file (.project) for 'DatabaseConnection' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.core.resources 2 2 2017-01-22 01:35:24.611
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2017-01-22 01:35:24.611
+!MESSAGE The project description file (.project) for 'DatabaseConnection' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-01-22 17:46:56.435
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at https://repo.eclipse.org/content/groups/snapshots/org/eclipse/egit/org.eclipse.egit.repository/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:82)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2017-01-22 17:46:56.449
+!MESSAGE No repository found at https://repo.eclipse.org/content/groups/snapshots/org/eclipse/egit/org.eclipse.egit.repository/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2017-01-22 17:46:56.493
+!MESSAGE No repository found at https://repo.eclipse.org/content/groups/snapshots/org/eclipse/egit/org.eclipse.egit.repository/.
+
+!ENTRY org.eclipse.ui 4 0 2017-01-22 21:29:48.131
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2099)
+	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:207)
+	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2597)
+	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:283)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5361)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
+	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:789)
+	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1266)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5740)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSRunLoop.runMode(NSRunLoop.java:42)
+	at org.eclipse.swt.widgets.Display.sleep(Display.java:4573)
+	at org.eclipse.ui.application.WorkbenchAdvisor.eventLoopIdle(WorkbenchAdvisor.java:364)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.eventLoopIdle(IDEWorkbenchAdvisor.java:917)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2702)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+
+!ENTRY org.eclipse.epp.usagedata.recording 2 0 2017-01-23 01:34:22.938
+!MESSAGE The usage data upload server at http://udc.eclipse.org/upload.php could not be found.
+!STACK 0
+java.net.UnknownHostException: udc.eclipse.org
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:223)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:431)
+	at java.net.Socket.connect(Socket.java:527)
+	at java.net.Socket.connect(Socket.java:476)
+	at java.net.Socket.<init>(Socket.java:373)
+	at java.net.Socket.<init>(Socket.java:247)
+	at org.apache.commons.httpclient.protocol.DefaultProtocolSocketFactory.createSocket(DefaultProtocolSocketFactory.java:80)
+	at org.apache.commons.httpclient.protocol.DefaultProtocolSocketFactory.createSocket(DefaultProtocolSocketFactory.java:122)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:323)
+	at org.eclipse.epp.usagedata.internal.recording.uploading.BasicUploader.doUpload(BasicUploader.java:206)
+	at org.eclipse.epp.usagedata.internal.recording.uploading.BasicUploader.upload(BasicUploader.java:129)
+	at org.eclipse.epp.usagedata.internal.recording.uploading.BasicUploader$1.run(BasicUploader.java:105)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui 4 0 2017-01-23 02:14:08.224
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2099)
+	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:207)
+	at org.eclipse.swt.widgets.Table.sendMeasureItem(Table.java:3085)
+	at org.eclipse.swt.widgets.Table.cellSize(Table.java:231)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5361)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
+	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:789)
+	at org.eclipse.swt.widgets.Table.expansionFrameWithFrame_inView(Table.java:1178)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5740)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSRunLoop.runMode(NSRunLoop.java:42)
+	at org.eclipse.swt.widgets.Display.sleep(Display.java:4573)
+	at org.eclipse.ui.application.WorkbenchAdvisor.eventLoopIdle(WorkbenchAdvisor.java:364)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.eventLoopIdle(IDEWorkbenchAdvisor.java:917)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2702)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+!SESSION 2017-01-23 23:07:07.557 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-23 23:07:21.329
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2017-01-23 23:30:05.394 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -data /Users/sampada/Documents/workspace/DervanSports -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-23 23:30:09.640
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2017-01-24 22:46:01.564 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-24 22:46:13.867
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 4 0 2017-01-24 23:37:44.626
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.swt.widgets.Control.internal_new_GC(Control.java:2099)
+	at org.eclipse.swt.graphics.GC.cocoa_new(GC.java:207)
+	at org.eclipse.swt.widgets.Tree.sendMeasureItem(Tree.java:2597)
+	at org.eclipse.swt.widgets.Tree.cellSize(Tree.java:283)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5361)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper_stret(Native Method)
+	at org.eclipse.swt.widgets.Widget.expansionFrameWithFrame_inView(Widget.java:789)
+	at org.eclipse.swt.widgets.Tree.expansionFrameWithFrame_inView(Tree.java:1266)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5740)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend_bool(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSRunLoop.runMode(NSRunLoop.java:42)
+	at org.eclipse.swt.widgets.Display.sleep(Display.java:4573)
+	at org.eclipse.ui.application.WorkbenchAdvisor.eventLoopIdle(WorkbenchAdvisor.java:364)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.eventLoopIdle(IDEWorkbenchAdvisor.java:917)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2702)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+!SESSION 2017-01-25 23:14:25.179 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/sampada/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2017-01-25 23:14:44.739
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

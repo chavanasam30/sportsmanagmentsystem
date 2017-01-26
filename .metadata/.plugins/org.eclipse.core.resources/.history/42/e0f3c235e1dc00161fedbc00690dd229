@@ -1,0 +1,16 @@
+package com.devrvan.sports.dbconnections;
+
+import java.sql.*;
+public class DataBaseConnection {
+
+	
+	public static void main(String args[]) throws ClassNotFoundException, SQLException{
+		
+		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+		
+		Connection con = DriverManager.getConnection("", "root", "sampada30");
+	}
+
+	
+	
+}

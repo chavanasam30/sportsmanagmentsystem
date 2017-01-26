@@ -1,0 +1,16 @@
+package com.sports.event.algorithms;
+
+public class DrawTeamMatches {
+
+	public void DeriveNoOfMatches(int gameId,String round_Type){
+		
+		// ## Go in games table and search for respective Game Type
+		//String gameType = database call;
+		//String gameType = "TEAM";
+		String gameType = "IND";
+		if(){
+			
+		}
+	}
+	
+}

@@ -1,0 +1,44 @@
+package com.sports.event.algorithms;
+
+import com.sports.event.generics.DataBaseCalls;
+
+public class DrawTeamMatches {
+
+	public static void main(String args[]){
+		DeriveNoOfMatches(1,"1");
+	}
+	
+	public static void DeriveNoOfMatches(int gameId,String round_Type){
+		
+		
+		DataBaseCalls dbCalls = new DataBaseCalls();
+		
+		// ## Go in games table and search for respective Game Type
+		//String gameType = database call;
+		//String gameType = "TEAM";
+		String gameType = "IND";
+		int lhs = 2;
+		int rhs = 0;
+		
+		if(gameType.equalsIgnoreCase("IND")){
+			// ## Go in PART_GAME Table and get 
+			
+			int participatsCount = dbCalls.getCount();
+			
+			while(participatsCount >= lhs && participatsCount < rhs){
+				
+				rhs = lhs * 2;
+				
+				if(participatsCount >= lhs && participatsCount < rhs){
+					System.out.println("Limit is " + lhs);
+				}
+				
+				lhs = rhs;
+			}
+			
+		}else if(gameType.equalsIgnoreCase("TEAM")){
+			
+		}
+	}
+	
+}

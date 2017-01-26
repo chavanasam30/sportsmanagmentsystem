@@ -1,0 +1,26 @@
+package com.sports.event.generics;
+
+import java.sql.SQLException;
+
+import com.sports.dbconnections.DataBaseConnection;
+
+public class DataBaseCalls {
+
+	
+	public int getCount(){
+		
+		return 500;
+	}
+	
+	
+	
+public void getGameDetail(int gameId) throws ClassNotFoundException, SQLException{
+		
+		String query = "SELECT TYPE FROM GAME WHERE GAME_ID = " + gameId;
+		
+		DataBaseConnection dbConn = new DataBaseConnection();
+		
+		
+	
+	}
+}

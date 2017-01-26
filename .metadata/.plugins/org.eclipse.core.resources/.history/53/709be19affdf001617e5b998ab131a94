@@ -1,0 +1,11 @@
+package com.sports.event.algorithms;
+
+public class DrawTeamMatches {
+
+	public void DeriveNoOfMatches(int gameId,String round_Type){
+		
+		
+		
+	}
+	
+}

@@ -1,0 +1,10 @@
+package com.sports.event.generics;
+
+public class c {
+
+	
+	public int getCount(){
+		
+		return 5;
+	}
+}

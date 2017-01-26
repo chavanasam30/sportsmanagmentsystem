@@ -1,0 +1,8 @@
+package snippet;
+
+public class Snippet {
+	public static void main(String[] args) {
+		/Users/sampada/Documents/workspace/jars/mysql-connector-java-5.1.38.jar
+	}
+}
+

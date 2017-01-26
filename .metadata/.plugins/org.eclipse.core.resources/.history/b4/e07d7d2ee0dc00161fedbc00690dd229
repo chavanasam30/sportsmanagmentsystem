@@ -1,0 +1,10 @@
+package com.devrvan.sports.dbconnections;
+
+public class DataBaseConnection {
+
+	
+	public static void main(String args[]){}
+	
+	
+	
+}

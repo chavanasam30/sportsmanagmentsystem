@@ -1,0 +1,30 @@
+package com.devrvan.sports.dbconnections;
+
+import java.sql.*;
+
+public class DataBaseConnection {
+
+	
+	public static void main(String args[]) throws ClassNotFoundException, SQLException {
+		
+		Class.forName("com.mysql.jdbc.Driver");  
+		
+		Connection con = DriverManager.getConnection
+				("jdbc:mysql://localhost:3306/dervansports", "root", "sampada30");
+		
+		
+		//Statement stmt = con.createStatement();
+		String query = "Insert into dervansports.test values(?,?)";
+		
+		PreparedStatement prpt = con.prepareStatement(query);
+		prpt.setInt(1, 1);
+		prpt.setString(2, "sbc");
+		
+		prpt.execute();
+		//stmt.executeQuery("Insert into dervansports.test values(1,'abc')");
+		con.close();
+	}
+
+	
+	
+}
