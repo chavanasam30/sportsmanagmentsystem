@@ -6,6 +6,12 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import com.sports.event.generics.DataBaseCalls;
 
 public class DrawTeamMatches {
@@ -53,6 +59,30 @@ public class DrawTeamMatches {
 		}
 		System.out.println("Participant List " + participantList);
 		
+		
+		JFrame frame = new JFrame("A Simple GUI");
+	    frame.setVisible(true);
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    frame.setSize(500, 500);
+	    frame.setLocation(430, 100);
+
+	    JPanel panel = new JPanel();
+
+	    frame.add(panel);
+
+	    JLabel lbl = new JLabel("Select one of the possible choices and click OK");
+	    lbl.setVisible(true);
+
+	    panel.add(lbl);
+	    
+		JComboBox<ArrayList<Integer>> participantDD = new JComboBox<ArrayList<Integer>>();
+		participantDD.addItem(participantList); 
+		participantDD.setVisible(true);
+		panel.add(participantDD);
+		
+		JButton btn = new JButton("OK");
+	    panel.add(btn);
+	    
 		participatsCount = participantList.size();		
 		System.out.println("Toatal Participant :" + participatsCount);
 			
