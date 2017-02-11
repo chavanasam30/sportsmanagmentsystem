@@ -6,8 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/style.css"/>
 <title>Dervar Sport Event</title>
+<title>Select Game Name :</title>
 </head>
-<body>
+<body BGCOLOR=##f89ggh>
 <form>
 	<div class="heading">
 		<label>Dervnar Sport Event</label>
@@ -22,7 +23,7 @@
 				</button>
 			</td>
 			<td>	
-				<button type="button" onclick="javascript:window.location='NewTeamEntry.jsp'">
+				<button type="button" onclick="javascript:window.location='TeamEntry.jsp'">
 					<img alt="" src="<%=request.getContextPath()%>/images/add-group-icon.png">
 				</button>
 	 		</td>
