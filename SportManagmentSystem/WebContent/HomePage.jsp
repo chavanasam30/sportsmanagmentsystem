@@ -5,15 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/style.css"/>
-<title>Dervar Sport Event</title>
+<title>Dervan Sport Event</title>
 </head>
 <body>
 <form>
 	<div class="heading">
-		<label>Dervnar Sport Event</label>
+		<label>Dervan Sport Event</label>
 	</div>
 	 <div class="table">
-	 <table >
+	 <table>
 	 
 	 	<tr>
 	 		<td>
@@ -28,10 +28,7 @@
 	 		</td>
 	 	</tr>
 	 	<tr></tr>
-	 </table> 
-	 
-	 
-		
+	 </table> 	
 		<%-- <input type="image" id="newParticipant" onclick="javascript:window.location='NewParticipantEntry.jsp'" src="<%=request.getContextPath()%>/images/add_user.png" > --%>
 	</div> 
 </form>
