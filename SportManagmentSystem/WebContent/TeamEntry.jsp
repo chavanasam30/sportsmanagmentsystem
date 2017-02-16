@@ -1,48 +1,184 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html SYSTEM "about:legacy-compat" PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Team Entry Form</title>
+
+<title>Dervar Sport Event</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/material.min.css"/>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/font/material-icons.css"/>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/style.css"/>
+
 
 <script type="text/javascript" src="js/jquery.1.7.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.js"></script> 
-<script type="text/javascript" src="js/jquery.currency.js"></script> 
+<script type="text/javascript" src="js/jquery.currency.js"></script>
+ 
+
+ 
+<script type="text/javascript" src="js/material.min.js"></script> 
 
 </head>
 <body>
-
+<div class="heading">
+		<label>Dervnar Sport Event</label>
+	</div>
 
 <script  type="text/javascript">
+var memberlist=[];
 $(document).ready(function(){
+		
+		var noofmember=0;
+	 	var dialog = document.querySelector('#teamnameDialog');
+	    var showDialogButton = document.querySelector('#show-dialog');
+	    if (!dialog.showModal) {
+	      dialogPolyfill.registerDialog(dialog);
+	    }
+	    showDialogButton.addEventListener('click', function() {
+	      dialog.showModal();
+	    });
+	    dialog.querySelector('.ok').addEventListener('click', function() {
+	    	document.querySelector('.inputteamname').innerHTML=document.querySelector('#teamName').value+ " OF " +document.querySelector('#schoolName').value;
+	    	dialog.close();
+		});
+	    dialog.querySelector('.close').addEventListener('click', function() {
+	      dialog.close();
+	    });
+	    var isedited=false;
+	    var iseditedid=0;
+	    var newMemberdialog = document.querySelector('#newmemeber');
+	    var newmemberButton = document.querySelector('.addmember');
+	    if (!newMemberdialog.showModal) {
+	      dialogPolyfill.registerDialog(newMemberdialog);
+	    }
+	    newmemberButton.addEventListener('click', function() {
+	    	editorinsert();
+	    	newMemberdialog.showModal();
+	    });
+	    newMemberdialog.querySelector('.ok').addEventListener('click', function() {
+	    	addMember();
+	    	newMemberdialog.close();
+		});
+	    newMemberdialog.querySelector('.close').addEventListener('click', function() {
+	    	
+	    	newMemberdialog.close();
+	    });
+	    editorinsert=function(obj){
+	    	var id;
+	    	if(obj!=undefined){
+	    		id=obj['id'];
+	    	}
+	    	$('#fistnameText').val((obj!=undefined)?obj["fistnameText"]:'');
+	    	$('#middlenameText').val((obj!=undefined)?obj["middlenameText"]:'');
+	    	$('#lastnameText').val((obj!=undefined)?obj["lastnameText"]:''); 
+	    	$('#dobText').val((obj!=undefined)?obj["dobText"]:'');
+	    	$('#ageText').text((obj!=undefined)?obj["ageText"]:'');
+	    	$('#genderText').val((obj!=undefined)?obj["genderText"]:'') ;
+	    	$('#addressText').val((obj!=undefined)?obj["addressText"]:'');
+	    	$('#stateText').val((obj!=undefined)?obj["stateText"]:'');
+	    	$('#cityText').val((obj!=undefined)?obj["cityText"]:'');
+	    	$('#pincodeText').val((obj!=undefined)?obj["pincodeText"]:'') 
+	    	$('#phoneText').val((obj!=undefined)?obj["phoneText"]:'');
+	    	$('#emergencyphone').val((obj!=undefined)?obj["emergencyphone"]:'');
+	    	$('#emailText').val((obj!=undefined)?obj["emailText"]:'');
+	    }
+	    
+	    addMember=function(){
+	    	alert("1");
+	    	noofmember=noofmember+1
+	    	var arr={};
+	    	if(isedited){
+	    		$.each(memberlist,function(e,i){
+	    			if(memberlist[e]['id']==iseditedid){
+	    				arr=i;
+	    			}
+	    		});
+	    		
+	    	}else{
+	    		arr["id"]=noofmember;
+	    	}
+	    	arr["fistnameText"]=$('#fistnameText').val();
+	    	arr["middlenameText"]=$('#middlenameText').val();
+	    	arr["lastnameText"]=$('#lastnameText').val(); 
+	    	arr["dobText"]=$('#dobText').val();
+	    	arr["ageText"]=$('#ageText').text();
+	    	arr["genderText"]=$('#genderText').val() ;
+	    	arr["addressText"]=$('#addressText').val();
+	    	arr["stateText"]=$('#stateText').val();
+	    	arr["cityText"]=$('#cityText').val();
+	    	arr["pincodeText"]=$('#pincodeText').val() 
+	    	arr["phoneText"]=$('#phoneText').val();
+	    	arr["emergencyphone"]=$('#emergencyphone').val();
+	    	arr["emailText"]=$('#emailText').val();
+	    	if(isedited){
+	    		$('.tablerow[memberrow="'+iseditedid+'"]').html('<div class="mdl-cell mdl-cell--3-col"></div><div class="mdl-cell mdl-cell--2-col"><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent delete"><i class="material-icons">delete</i></button><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent edit"><i class="material-icons">edit</i></button></div><div class="mdl-cell mdl-cell--3-col">'+arr["fistnameText"]+' '+arr["middlenameText"]+' '+arr["lastnameText"]+'</div><div class="mdl-cell mdl-cell--2-col">'+arr["ageText"]+'</div><div class="mdl-cell mdl-cell--2-col"></div>')
+	    	}else{
+	    	memberlist.push(arr);
+	    	alert(memberlist);
+	    	var trHTML='<div class="mdl-grid tablerow" memberrow="'+noofmember+'"><div class="mdl-cell mdl-cell--3-col"></div><div class="mdl-cell mdl-cell--2-col"><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent delete"><i class="material-icons">delete</i></button><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent edit"><i class="material-icons">edit</i></button></div><div class="mdl-cell mdl-cell--3-col">'+arr["fistnameText"]+' '+arr["middlenameText"]+' '+arr["lastnameText"]+'</div><div class="mdl-cell mdl-cell--2-col">'+arr["ageText"]+'</div><div class="mdl-cell mdl-cell--2-col"></div></div>';
+	    	$(".memberlist").append(trHTML);
+	    	}
+	    	$('.edit').off('click').on('click',function(){
+	    		var id=$(this).parents('.tablerow').attr('memberrow');
+	    		iseditedid=id;
+	    		var temp;
+	    		$.each(memberlist,function(e,i){
+	    			if(memberlist[e]['id']==id){
+	    				temp=i;
+	    			}
+	    		});
+	    		isedited=true;
+	    		editorinsert(temp);
+	    		newMemberdialog.showModal();
+	    		return false;
+	    	});
+	    	$('.delete').off('click').on('click',function(){
+	    		var id=$(this).parents('.tablerow').attr('memberrow');
+	    		console.log(id);
+	    		var temp=[];
+	    		$.each(memberlist,function(e,i){
+	    			if(memberlist[e]['id']!=id){
+	    				temp.push(i);
+	    			}
+	    		});
+	    		memberlist=temp;
+	    		$(this).parents('.tablerow').remove();
+	    		return false;
+	    	});
+	    	isedited=false;
+	    }
+	    
+	    
+	    $.ajax({
+			type:"post",
+			url:"/SportManagmentSystem/TeamEntryServlet",
+			data:{dataSend:"category"},  
+			datatype:"json",
+			 success:function(data, textStatus, jqXHR)
+	         {
+		    	var e=jQuery.parseJSON(data);	          
+		    	console.log("category"+e);    
+		        var options = '';
+		        options += '<option value="NotSelected">Select the Game Category</option>';
+				 if(e!=undefined && e!=null && e!="" ){ 
+					$.each(e, function(key, value){
+						options += '<option value="' + key + '">' + value + '</option>';
+					});
+				}
+		        $("#category").html(options);	        
+		        
+					     
+	         },
+	         error:function(xhr,status){
+	             console.log(status);
+	      }
+		});
+	    
+	    
 	
-	
-	$.ajax({
-		type:"post",
-		url:"/SportManagmentSystem/TeamEntryServlet",
-		data:{dataSend:"category"},  
-		datatype:"json",
-		 success:function(data, textStatus, jqXHR)
-         {
-	    	var e=jQuery.parseJSON(data);	          
-	    	console.log("category"+e);    
-	        var options = '';
-	        options += '<option value="NotSelected">Select the Game Category</option>';
-			 if(e!=undefined && e!=null && e!="" ){ 
-				$.each(e, function(key, value){
-					options += '<option value="' + key + '">' + value + '</option>';
-				});
-			}
-	        $("#category").html(options);	        
-	        
-				     
-         },
-         error:function(xhr,status){
-             console.log(status);
-      }
-	});
 	
 	
 	$("#category").change(function(){
@@ -72,28 +208,9 @@ $(document).ready(function(){
 	 });
 	
 	
-	$("#searchBtn").click(function(){
-		$.ajax({
-		       type: "post",
-		       url:"/SportManagmentSystem/TeamEntryServlet",
-		       data:"dataSend=searchBtn&&category="+$("#category").val()+"&&age="+$("#age").val()+"&&gender="+$("#gender").val(),      
-		       success:function(data, textStatus, jqXHR)
-			      {
-		    		var e=jQuery.parseJSON(data);
-				    var options = '';
-			     	options += '<option value="NotSelected">Select Captain</option>';
-					if(e!=undefined && e!=null && e!="" ){
-						$.each(e, function(key, value){
-							options += '<option value="' + key + '">' + value + '</option>';
-						});		     	
-					}
-			     $("#captainlist").html(options);
-			      },		      
-			      error:function(xhr,status){
-				        console.log(status);
-				 }
-		});
-	});
+	
+	
+	
 	
 	$("#captainlist").change(function(){
 		 if($(this).val()!="NotSelected"){			 
@@ -113,7 +230,7 @@ $(document).ready(function(){
 		}	
 	 });
 	
-	
+	/*
 	$("#addBtn").click(function(){
 		    	   var optionCat ='';
 		    	   var trHTML = '';	
@@ -338,10 +455,315 @@ $(document).ready(function(){
            yearRange: '-100y:c+nn',
            maxDate: '-1d'
 	  });
-		
+	var picker = new MaterialDatetimePicker({})
+	.on('submit', function(d) {
+	  output.innerText = d;
+	});
+	    */	
+	   $('#p2').hide();
+	    $('.data').hide();
+	    $('.searching').off('click').on('click',function(){
+	    	$('#p2').show();
+	    	//setTimeout(function(){},5000);
+	    		
+	    		
+	    			//$("#searchBtn").click(function(){
+	    				$.ajax({
+	    				       type: "post",
+	    				       url:"/SportManagmentSystem/TeamEntryServlet",
+	    				       data:"dataSend=searchBtn&&category="+$("#category").val()+"&&age="+$("#age").val()+"&&gender="+$("#gender").val(),      
+	    				       success:function(data, textStatus, jqXHR)
+	    					      {
+	    				    		var e=jQuery.parseJSON(data);
+	    						    var options = '';
+	    					     	options += '<option value="NotSelected"></option>';
+	    							if(e!=undefined && e!=null && e!="" ){
+	    								$.each(e, function(key, value){
+	    									options += '<option value="' + key + '">' + value + '</option>';
+	    								});		     	
+	    							}
+	    					     $("#captainlist").html(options);
+	    					     $('#p2').fadeOut('slow',function(){
+	    				    			$('.data').fadeIn('slow');	
+	    					     });
+	    					      },		      
+	    					      error:function(xhr,status){
+	    						        console.log(status);
+	    						 }
+	    				});
+	    			//});
+	    			
+	    		//});
+	    	
+	    	return false;
+	    });
+	    var day;
+	    var month;
+	    var year;
+	    $("#day").change(function(){
+	    	day=$(this).val();
+	    	calAge();
+	    });
+	    $("#month").change(function(){
+	    	month=$(this).val();
+	    	calAge();
+	    });
+	    $("#year").change(function(){
+	    	year=$(this).val();
+	    	calAge();
+	    });
+
+
+	    calAge =function(e){
+	    		let d=31;
+	    		 var valideDate=false;
+	    		if(!isNaN(day) && !isNaN(month)&&!isNaN(year)){
+	    			if(month=='February'){
+	    			 if((this.isLeapyear() && day<30)||day<29){
+	    				 d=28;
+	    				 if(this.isLeapyear()){
+	    					d=28;	 
+	    				 }
+	    				 valideDate=true;
+	    			 }
+	    			}else if(month=='April' || month=='June' ||month=='September' || month=='November' ){
+	    				if(day<31){
+	    				 valideDate=true;
+	    				 d=31;	 
+	    			 }
+	    			}else{
+	    				valideDate=true;
+	    			}
+	    			if(valideDate){
+	    				console.log(month+'/'+ day+'/'+year);
+	    				this.dob=new Date(month+'/'+ day+'/'+year);
+	    				console.log(this.dob);
+	    				let ageDifMs = new Date('3/15/2017') - new Date(month+'/'+ day+'/'+year).getTime();
+	    				let ageDate = new Date(ageDifMs);
+	    				dayofbirth=d-ageDate.getDate();
+	    				months=12-(ageDate.getMonth()+1);
+	    				var yrs=Math.abs(ageDate.getUTCFullYear() - 1970);
+	    				$('#ageText').text(yrs);
+	    				valideDate=false;
+	    			}
+	    			
+	    		}
+	    		
+	    	}
+	    for(var i=1;i<32;i++){$('#day').append('<option value="'+i+'">'+i+'</option>')}
+	    for(var i=1;i<13;i++){$('#month').append('<option value="'+i+'">'+i+'</option>')}
+	    for(var i=1970;i<2017;i++){$('#year').append('<option value="'+i+'">'+i+'</option>')}
+	    $('.saveTeam').off('click').on('click',function(){
+	    	alert("hi");
+	    	$.ajax({
+			    type: "POST",
+			    url:"/SportManagmentSystem/TeamEntryServlet",
+			    //data: "dataSend=createTeamBtn&&TableData=" + TableData + "&&TeamName=" + $("#teamnameText").val() + "&&TeamSchoolName=" + $("#teamschoolnameText").val(),
+			   
+			   data: {dataSend:'createTeamBtn',TableData: JSON.stringify(memberlist),TeamName: $("#teamName").val(),TeamSchoolName:$("#schoolName").val()} ,
+			    success: function(msg){
+			        // return value stored in msg variable
+			    }		
+			});
+	    	
+	    	return false;
+	    	
+	    })
 });
+
 </script>
 <form>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <select class="mdl-textfield__input" id="category">
+            <option value=""></option>
+        </select>
+        <label class="mdl-textfield__label" for="category">Select Category</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <select class="mdl-textfield__input" id="age">
+            <option value=""></option>
+        </select>
+        <label class="mdl-textfield__label" for="age">Select Age</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <select class="mdl-textfield__input" id="gender">
+            <option value=""></option>
+            <option value="B">B</option>
+            <option value="G">G</option>
+        </select>
+        <label class="mdl-textfield__label" for="gender">Gender</label>
+    </div>
+    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  
+    mdl-button--accent searching" id="tt1">
+        <i class="material-icons">search</i>
+    </button>
+    <div class="mdl-tooltip" data-mdl-for="tt1">
+        Search Captian
+    </div>
+
+    <div class="clear-fix"></div>
+    <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+    <div class="clear-fix"></div>
+    <div class="data">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <select class="mdl-textfield__input" id="captainlist">
+            <option value=""></option>
+        </select>	
+        <label class="mdl-textfield__label" for="captainlist">Select Captain</label>
+    </div>
+    <button id="show-dialog" type="button" class="mdl-button">Add Team Name</button>
+    <div class="clear-fix"></div>
+    <div class="inputteamname" id="tt2"></div>
+    <div class="mdl-tooltip" data-mdl-for="tt2">
+        Team Name
+    </div>
+     <div class="clear-fix"></div>
+    <dialog class="mdl-dialog" id="teamnameDialog">
+
+        <div class="mdl-dialog__content">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="teamName">
+                <label class="mdl-textfield__label" for="teamName">Team Name</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="schoolName">
+                <label class="mdl-textfield__label" for="schoolName">School Name</label>
+            </div>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button ok">Ok</button>
+            <button type="button" class="mdl-button close">Cancel</button>
+        </div>
+    </dialog>
+    <div class="memberlist">
+     <div class="mdl-grid tableHeader">
+    <div class="mdl-cell mdl-cell--3-col">
+    <span class="mdl-chip mdl-chip--contact addmember">
+   	<img class="mdl-chip__contact" src="<%=request.getContextPath()%>/images/add-user.png"></img>
+	 <span class="mdl-chip__text">Add Member</span>
+    </span>
+    </div>
+     <div class="mdl-cell mdl-cell--2-col">
+	    Action
+    </div>
+     <div class="mdl-cell mdl-cell--3-col">
+	    Name
+    </div>
+     <div class="mdl-cell mdl-cell--2-col">
+	    Age
+    </div>
+     <div class="mdl-cell mdl-cell--2-col">
+	    
+    </div>
+    </div>
+
+    </div>
+
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent saveTeam">
+ Save Team
+</button>
+    <dialog class="mdl-dialog" id="newmemeber">
+
+        <div class="mdl-dialog__content">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="fistnameText">
+                        <label class="mdl-textfield__label" for="fistnameText">Name</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="middlenameText">
+                        <label class="mdl-textfield__label" for="middlenameText">Father Name</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="lastnameText">
+                        <label class="mdl-textfield__label" for="lastnameText">Surname</label>
+                    </div>
+                </div>
+            </div>
+        	<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+  				<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+  				<span class="mdl-checkbox__label">Same as Captain</span>
+			</label>
+        	<div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <textarea class="mdl-textfield__input"  rows= "3" id="addressText" ></textarea>
+                        <label class="mdl-textfield__label" for="addressText">Address</label>
+                    </div>
+                </div>
+            </div>
+        	<div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="stateText">
+                        <label class="mdl-textfield__label" for="stateText">State</label>
+                    </div>
+                    
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="cityText">
+                        <label class="mdl-textfield__label" for="cityText">City</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="pincodeText">
+                        <label class="mdl-textfield__label" for="pincodeText">Pin Code</label>
+                    </div>
+                </div>
+            </div>
+        	<div class="mdl-grid dobvals" >
+                <div class="mdl-cell mdl-cell--6-col">
+                   <label>Date of Birth</label>
+                   <select id="day"><option value="0">DD<option></select>
+                   <select id="month"><option value="0">MM<option></select>
+                   <select id="year"><option value="0">YYYY<option></select>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                        Age:
+                        <span id="ageText"></span>
+                </div>
+               
+            </div>
+        	
+        	<div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="phoneText">
+                        <label class="mdl-textfield__label" for="phoneText">Phone</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="emergencyphone">
+                        <label class="mdl-textfield__label" for="emergencyphone">Emergency Phone</label>
+                    </div>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="emailText">
+                        <label class="mdl-textfield__label" for="emailText">Email</label>
+                    </div>
+                </div>
+            </div>
+        	
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button ok">Add</button>
+            <button type="button" class="mdl-button close">Cancel</button>
+        </div>
+    </dialog>
+   </div>
+</form>
+
+
+<!-- form>
 <div class=container></div>
 
 	<div class="labels_category"><span>Please select category:</span></div><select id="category"></select>
@@ -406,7 +828,7 @@ $(document).ready(function(){
 		<input type="button" name="createTeamBtn" id="createTeamBtn" value="Create Team">
 </div>
 
-</form>
+</form-->
 
 
 </body>
