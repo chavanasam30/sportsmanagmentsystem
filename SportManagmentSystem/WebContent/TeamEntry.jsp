@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="heading">
-		<label>Dervnar Sport Event</label>
+		<label>Dervan Sport Event</label>
 	</div>
 
 <script  type="text/javascript">
@@ -59,11 +59,45 @@ $(document).ready(function(){
 	    	newMemberdialog.showModal();
 	    });
 	    newMemberdialog.querySelector('.ok').addEventListener('click', function() {
-	    	addMember();
-	    	newMemberdialog.close();
+	    	var numbers = /^[0-9]+$/;
+	        if(document.getElementById('day').selectedIndex != '0' && document.getElementById('month').selectedIndex != '0' && document.getElementById('year').selectedIndex != '0' && document.getElementById("phoneText").value.match(numbers) && document.getElementById("pincodeText").value.match(numbers) && document.getElementById("emergencyphone").value.match(numbers))
+	        {	        
+		        addMember();
+		    	newMemberdialog.close();	    	
+	        	return true;
+	        }
+	        else
+	        {
+	        
+	         //alert(document.getElementById('day').selectedIndex);
+        	 if(document.getElementById('day').selectedIndex == '0' || document.getElementById('month').selectedIndex == '0' || document.getElementById('year').selectedIndex == '0'){
+        		 alert('Please select valid date of birth.');
+ 	        	document.getElementById("day").focus();
+        	 }
+	        	 
+	        if(!document.getElementById("emergencyphone").value.match(numbers)){
+	        	alert('Please input numeric values only in Emergency Phone');
+	        	document.getElementById("emergencyphone").focus();
+	        }
+	        
+	        if(!document.getElementById("phoneText").value.match(numbers)){
+	        	alert('Please input numeric values only in Phone.');
+	        	document.getElementById("phoneText").focus();
+	        }
+	        
+
+       	 	if(!document.getElementById("pincodeText").value.match(numbers)){
+	        	alert('Please input numeric values only in Pincode');
+	        	document.getElementById("pincodeText").focus();
+	        }
+       	 
+	        return false;
+	        }
+	        
+	    	
 		});
 	    newMemberdialog.querySelector('.close').addEventListener('click', function() {
-	    	
+
 	    	newMemberdialog.close();
 	    });
 	    editorinsert=function(obj){
@@ -74,9 +108,11 @@ $(document).ready(function(){
 	    	$('#fistnameText').val((obj!=undefined)?obj["fistnameText"]:'');
 	    	$('#middlenameText').val((obj!=undefined)?obj["middlenameText"]:'');
 	    	$('#lastnameText').val((obj!=undefined)?obj["lastnameText"]:''); 
-	    	$('#dobText').val((obj!=undefined)?obj["dobText"]:'');
+	    	//$('#day').val((obj!=undefined)?obj["day"]:'');
+	    	//$('#month').val((obj!=undefined)?obj["month"]:'');
+	    	//$('#year').val((obj!=undefined)?obj["year"]:'');
 	    	$('#ageText').text((obj!=undefined)?obj["ageText"]:'');
-	    	$('#genderText').val((obj!=undefined)?obj["genderText"]:'') ;
+	    	$('#genderParti').val((obj!=undefined)?obj["genderParti"]:'') ;
 	    	$('#addressText').val((obj!=undefined)?obj["addressText"]:'');
 	    	$('#stateText').val((obj!=undefined)?obj["stateText"]:'');
 	    	$('#cityText').val((obj!=undefined)?obj["cityText"]:'');
@@ -87,7 +123,6 @@ $(document).ready(function(){
 	    }
 	    
 	    addMember=function(){
-	    	alert("1");
 	    	noofmember=noofmember+1
 	    	var arr={};
 	    	if(isedited){
@@ -103,9 +138,11 @@ $(document).ready(function(){
 	    	arr["fistnameText"]=$('#fistnameText').val();
 	    	arr["middlenameText"]=$('#middlenameText').val();
 	    	arr["lastnameText"]=$('#lastnameText').val(); 
-	    	arr["dobText"]=$('#dobText').val();
+	    	arr["day"]=$('#day').val();
+	    	arr["month"]=$('#month').val();
+	    	arr["year"]=$('#year').val();
 	    	arr["ageText"]=$('#ageText').text();
-	    	arr["genderText"]=$('#genderText').val() ;
+	    	arr["genderParti"]=$('#genderParti').val() ;
 	    	arr["addressText"]=$('#addressText').val();
 	    	arr["stateText"]=$('#stateText').val();
 	    	arr["cityText"]=$('#cityText').val();
@@ -117,7 +154,6 @@ $(document).ready(function(){
 	    		$('.tablerow[memberrow="'+iseditedid+'"]').html('<div class="mdl-cell mdl-cell--3-col"></div><div class="mdl-cell mdl-cell--2-col"><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent delete"><i class="material-icons">delete</i></button><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent edit"><i class="material-icons">edit</i></button></div><div class="mdl-cell mdl-cell--3-col">'+arr["fistnameText"]+' '+arr["middlenameText"]+' '+arr["lastnameText"]+'</div><div class="mdl-cell mdl-cell--2-col">'+arr["ageText"]+'</div><div class="mdl-cell mdl-cell--2-col"></div>')
 	    	}else{
 	    	memberlist.push(arr);
-	    	alert(memberlist);
 	    	var trHTML='<div class="mdl-grid tablerow" memberrow="'+noofmember+'"><div class="mdl-cell mdl-cell--3-col"></div><div class="mdl-cell mdl-cell--2-col"><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent delete"><i class="material-icons">delete</i></button><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent edit"><i class="material-icons">edit</i></button></div><div class="mdl-cell mdl-cell--3-col">'+arr["fistnameText"]+' '+arr["middlenameText"]+' '+arr["lastnameText"]+'</div><div class="mdl-cell mdl-cell--2-col">'+arr["ageText"]+'</div><div class="mdl-cell mdl-cell--2-col"></div></div>';
 	    	$(".memberlist").append(trHTML);
 	    	}
@@ -192,7 +228,7 @@ $(document).ready(function(){
 		      {
 			   	var e=jQuery.parseJSON(data);
 			    var options = '';
-		     	options += '<option value="NotSelected">Select Age</option>';
+		     	options += '<option value="NotSelected"></option>';
 				if(e!=undefined && e!=null && e!="" ){
 					$.each(e, function(key, value){
 						options += '<option value="' + key + '">' + value + '</option>';
@@ -214,8 +250,8 @@ $(document).ready(function(){
 	
 	$("#captainlist").change(function(){
 		 if($(this).val()!="NotSelected"){			 
-			 //alert($('#captainlist').text());
-	    	    //alert($('#captainlist').val());	    	    
+			 //alert("Text" + $('#captainlist').text());
+	    	    //alert("Value"  + $('#captainlist').val());	    	    
 			$.ajax({
 			       type: "post",
 			       url:"/SportManagmentSystem/TeamEntryServlet",
@@ -465,36 +501,36 @@ $(document).ready(function(){
 	    $('.searching').off('click').on('click',function(){
 	    	$('#p2').show();
 	    	//setTimeout(function(){},5000);
-	    		
-	    		
-	    			//$("#searchBtn").click(function(){
-	    				$.ajax({
-	    				       type: "post",
-	    				       url:"/SportManagmentSystem/TeamEntryServlet",
-	    				       data:"dataSend=searchBtn&&category="+$("#category").val()+"&&age="+$("#age").val()+"&&gender="+$("#gender").val(),      
-	    				       success:function(data, textStatus, jqXHR)
-	    					      {
-	    				    		var e=jQuery.parseJSON(data);
-	    						    var options = '';
-	    					     	options += '<option value="NotSelected"></option>';
-	    							if(e!=undefined && e!=null && e!="" ){
-	    								$.each(e, function(key, value){
-	    									options += '<option value="' + key + '">' + value + '</option>';
-	    								});		     	
-	    							}
-	    					     $("#captainlist").html(options);
-	    					     $('#p2').fadeOut('slow',function(){
-	    				    			$('.data').fadeIn('slow');	
-	    					     });
-	    					      },		      
-	    					      error:function(xhr,status){
-	    						        console.log(status);
-	    						 }
-	    				});
-	    			//});
-	    			
-	    		//});
 	    	
+	    	if(document.getElementById('category').selectedIndex == '0' || document.getElementById('age').selectedIndex == '0' || document.getElementById('gender').selectedIndex == '0'){
+	    		alert("Please select Category,Gender and Age.");
+	    	}else{
+
+				$.ajax({
+			       type: "post",
+			       url:"/SportManagmentSystem/TeamEntryServlet",
+			       data:"dataSend=searchBtn&&category="+$("#category").val()+"&&age="+$("#age").val()+"&&gender="+$("#gender").val(),      
+			       success:function(data, textStatus, jqXHR)
+				      {
+			    		var e=jQuery.parseJSON(data);
+					    var options = '';
+				     	options += '<option value="NotSelected"></option>';
+						if(e!=undefined && e!=null && e!="" ){
+							$.each(e, function(key, value){
+								options += '<option value="' + key + '">' + value + '</option>';
+							});		     	
+						}
+				     $("#captainlist").html(options);
+				     $('#p2').fadeOut('slow',function(){
+			    			$('.data').fadeIn('slow');	
+				     });
+				      },		      
+				      error:function(xhr,status){
+					        console.log(status);
+					 }
+			});	
+	    	}
+		    	
 	    	return false;
 	    });
 	    var day;
@@ -553,22 +589,50 @@ $(document).ready(function(){
 	    for(var i=1;i<32;i++){$('#day').append('<option value="'+i+'">'+i+'</option>')}
 	    for(var i=1;i<13;i++){$('#month').append('<option value="'+i+'">'+i+'</option>')}
 	    for(var i=1970;i<2017;i++){$('#year').append('<option value="'+i+'">'+i+'</option>')}
-	    $('.saveTeam').off('click').on('click',function(){
-	    	alert("hi");
-	    	$.ajax({
-			    type: "POST",
-			    url:"/SportManagmentSystem/TeamEntryServlet",
-			    //data: "dataSend=createTeamBtn&&TableData=" + TableData + "&&TeamName=" + $("#teamnameText").val() + "&&TeamSchoolName=" + $("#teamschoolnameText").val(),
-			   
-			   data: {dataSend:'createTeamBtn',TableData: JSON.stringify(memberlist),TeamName: $("#teamName").val(),TeamSchoolName:$("#schoolName").val()} ,
-			    success: function(msg){
-			        // return value stored in msg variable
-			    }		
-			});
+	    $('.saveTeam').off('submit').on('click',function(){
 	    	
-	    	return false;
+	    	if(document.getElementById("captainlist").selectedIndex == '0' || document.getElementById('teamName').value.length == '0' || document.getElementById('schoolName').value.length == '0' || memberlist.length == '0'){
+	    		alert("something wrong");
+	    		if(memberlist.length == '0'){
+	    			alert("Please add team members.");
+	    			document.getElementById('addmemberspan').focus();
+	    		}
+	    		
+	    		if(document.getElementById("teamName").value.length == '0' || document.getElementById("schoolName").value.length == '0'){
+	    			alert("Please add Team Name and School Name.")
+		    		document.getElementById('show-dialog').focus();	
+	    		}
+	    		
+	    		if(document.getElementById("captainlist").selectedIndex == '0'){
+	    			alert("Please select captain name.")
+		    		document.getElementById('captainlist').focus();	
+	    		}
+	    		
+	    		return false;
+	    	}else{
+	    		
+	    		$.ajax({
+				    type: "POST",
+				    url:"/SportManagmentSystem/TeamEntryServlet",
+				    //data: "dataSend=createTeamBtn&&TableData=" + TableData + "&&TeamName=" + $("#teamnameText").val() + "&&TeamSchoolName=" + $("#teamschoolnameText").val(),
+				   
+				   data: {dataSend:'createTeamBtn',TableData: JSON.stringify(memberlist),TeamName: $("#teamName").val(),TeamSchoolName:$("#schoolName").val(),CaptainId:$('#captainlist').val()} ,
+				    success: function(msg){
+				        // return value stored in msg variable
+				    }		
+				});
+		    	
+		    	return true;
+		    	
+	    	}
 	    	
-	    })
+	    	
+	    	
+	    });
+	    
+	    
+	    
+	    
 });
 
 </script>
@@ -577,7 +641,7 @@ $(document).ready(function(){
         <select class="mdl-textfield__input" id="category">
             <option value=""></option>
         </select>
-        <label class="mdl-textfield__label" for="category">Select Category</label>
+        <label class="mdl-textfield__label" for="category"></label>
     </div>
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <select class="mdl-textfield__input" id="age">
@@ -611,7 +675,7 @@ $(document).ready(function(){
         </select>	
         <label class="mdl-textfield__label" for="captainlist">Select Captain</label>
     </div>
-    <button id="show-dialog" type="button" class="mdl-button">Add Team Name</button>
+    <button id="show-dialog" type="button" class="mdl-button">Add Team/School Name</button>
     <div class="clear-fix"></div>
     <div class="inputteamname" id="tt2"></div>
     <div class="mdl-tooltip" data-mdl-for="tt2">
@@ -622,11 +686,11 @@ $(document).ready(function(){
 
         <div class="mdl-dialog__content">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="teamName">
+                <input class="mdl-textfield__input" type="text" id="teamName" maxlength="99">
                 <label class="mdl-textfield__label" for="teamName">Team Name</label>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="schoolName">
+                <input class="mdl-textfield__input" type="text" id="schoolName" maxlength="99">
                 <label class="mdl-textfield__label" for="schoolName">School Name</label>
             </div>
         </div>
@@ -638,7 +702,7 @@ $(document).ready(function(){
     <div class="memberlist">
      <div class="mdl-grid tableHeader">
     <div class="mdl-cell mdl-cell--3-col">
-    <span class="mdl-chip mdl-chip--contact addmember">
+    <span id= "addmemberspan" class="mdl-chip mdl-chip--contact addmember">
    	<img class="mdl-chip__contact" src="<%=request.getContextPath()%>/images/add-user.png"></img>
 	 <span class="mdl-chip__text">Add Member</span>
     </span>
@@ -668,19 +732,19 @@ $(document).ready(function(){
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="fistnameText">
+                        <input class="mdl-textfield__input" type="text" id="fistnameText" maxlength="49">
                         <label class="mdl-textfield__label" for="fistnameText">Name</label>
                     </div>
                 </div>
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="middlenameText">
+                        <input class="mdl-textfield__input" type="text" id="middlenameText" maxlength="49">
                         <label class="mdl-textfield__label" for="middlenameText">Father Name</label>
                     </div>
                 </div>
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="lastnameText">
+                        <input class="mdl-textfield__input" type="text" id="lastnameText" maxlength="49">
                         <label class="mdl-textfield__label" for="lastnameText">Surname</label>
                     </div>
                 </div>
@@ -692,7 +756,7 @@ $(document).ready(function(){
         	<div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--12-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <textarea class="mdl-textfield__input"  rows= "3" id="addressText" ></textarea>
+                        <textarea class="mdl-textfield__input"  rows= "3" id="addressText" maxlength="249"></textarea>
                         <label class="mdl-textfield__label" for="addressText">Address</label>
                     </div>
                 </div>
@@ -700,20 +764,20 @@ $(document).ready(function(){
         	<div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="stateText">
+                        <input class="mdl-textfield__input" type="text" id="stateText" maxlength="2">
                         <label class="mdl-textfield__label" for="stateText">State</label>
                     </div>
                     
                 </div>
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="cityText">
+                        <input class="mdl-textfield__input" type="text" id="cityText" maxlength="19">
                         <label class="mdl-textfield__label" for="cityText">City</label>
                     </div>
                 </div>
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="pincodeText">
+                        <input class="mdl-textfield__input" type="text" id="pincodeText" maxlength="6">
                         <label class="mdl-textfield__label" for="pincodeText">Pin Code</label>
                     </div>
                 </div>
@@ -723,7 +787,7 @@ $(document).ready(function(){
                    <label>Date of Birth</label>
                    <select id="day"><option value="0">DD<option></select>
                    <select id="month"><option value="0">MM<option></select>
-                   <select id="year"><option value="0">YYYY<option></select>
+                   <select id="year"><option value="0">YYYY<option></select>               
                 </div>
                 <div class="mdl-cell mdl-cell--6-col">
                         Age:
@@ -731,23 +795,30 @@ $(document).ready(function(){
                 </div>
                
             </div>
-        	
+        	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	        <select class="mdl-textfield__input" id="genderParti">
+	            <option value=""></option>
+	            <option value="B">B</option>
+	            <option value="G">G</option>
+	        </select>
+	        <label class="mdl-textfield__label" for="gender">Gender</label>
+	   		 </div>
         	<div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="phoneText">
+                        <input class="mdl-textfield__input" type="text" id="phoneText" maxlength="10">
                         <label class="mdl-textfield__label" for="phoneText">Phone</label>
                     </div>
                 </div>
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="emergencyphone">
+                        <input class="mdl-textfield__input" type="text" id="emergencyphone" maxlength="10">
                         <label class="mdl-textfield__label" for="emergencyphone">Emergency Phone</label>
                     </div>
                 </div>
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="emailText">
+                        <input class="mdl-textfield__input" type="text" id="emailText" maxlength="39">
                         <label class="mdl-textfield__label" for="emailText">Email</label>
                     </div>
                 </div>

@@ -104,31 +104,43 @@ public class TeamEntryServlet extends HttpServlet {
 				
 				String teamName = null != request.getParameter("TeamName") ? request.getParameter("TeamName") : "";
 				String teamSchoolName = null != request.getParameter("TeamSchoolName") ? request.getParameter("TeamSchoolName") : "";
+				int CaptainId = null != request.getParameter("CaptainId") ? Integer.parseInt(request.getParameter("CaptainId"))  : 0;
 				
 				int teamId = insertTeam(teamName,teamSchoolName);
 				
 				ArrayList<Integer> partiId = new ArrayList<Integer>();
 				
+				//## Insert Captain ID here , as captain will be part of team
+				partiId.add(CaptainId);
+				
 				try{
 					JSONArray slideContent = new JSONArray(request.getParameter("TableData"));
 					for (int i = 0; i < slideContent.length(); i++) {
-					    JSONObject jsonobject = slideContent.getJSONObject(i);
+					    
+						JSONObject jsonobject = slideContent.getJSONObject(i);
+					    
 					    String fname = jsonobject.getString("fistnameText");
 					    String lname = jsonobject.getString("lastnameText");
 					    String mname = jsonobject.getString("middlenameText");
 
-					    String dob = jsonobject.getString("dob");
-					    String age = jsonobject.getString("age");
-					    String gender = jsonobject.getString("gender");
+					    String day = jsonobject.getString("day");
+					    String month = jsonobject.getString("month");
+					    String year = jsonobject.getString("year");
 
-					    String address = jsonobject.getString("address");
-					    String city = jsonobject.getString("city");
-					    String state = jsonobject.getString("state");
-					    String pincode = jsonobject.getString("pincode");
+					    String dob = day+"-"+month+"-"+year;
 					    
-					    String phone = jsonobject.getString("phone");
-					    String emgphone = jsonobject.getString("emgphone");
-					    String email = jsonobject.getString("email");
+					    System.out.println("Date of birth of participant" + dob);
+					    String age = jsonobject.getString("ageText");
+					    String gender = jsonobject.getString("genderParti");
+
+					    String address = jsonobject.getString("addressText");
+					    String city = jsonobject.getString("cityText");
+					    String state = jsonobject.getString("stateText");
+					    String pincode = jsonobject.getString("pincodeText");
+					    
+					    String phone = jsonobject.getString("phoneText");
+					    String emgphone = jsonobject.getString("emergencyphone");
+					    String email = jsonobject.getString("emailText");
 					    
 					    int participantId = insertParticipantDetails(fname,lname,mname,dob,age,gender,
 					    		address,city,state,pincode,phone,emgphone,email);
@@ -138,7 +150,7 @@ public class TeamEntryServlet extends HttpServlet {
 	
 					}
 				}catch(Exception e){
-					
+					e.printStackTrace();
 				}
 				
 				// ## Insert into TEAM_PARTI
@@ -242,8 +254,6 @@ public class TeamEntryServlet extends HttpServlet {
 
 	}
 	
-	
-	
 	private int insertTeam(String teamName,String teamSchoolName){
 
 		PreparedStatement pstmt = null;
@@ -252,7 +262,6 @@ public class TeamEntryServlet extends HttpServlet {
 		try {
 			Calendar calendar = Calendar.getInstance();
 		    java.sql.Date ourJavaDateObject = new java.sql.Date(calendar.getTime().getTime());
-
 		    
 			 String query = "insert into Sport_Database.TEAM (TEAM_NAME,TEAM_SCHOOL,INSERT_DATE_TIME,UPDATE_DATE_TIME) values (?,?,?,?)";
 	         pstmt = dbConnection.getCon().prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
@@ -261,12 +270,11 @@ public class TeamEntryServlet extends HttpServlet {
 	         pstmt.setDate(3,ourJavaDateObject);
 	         pstmt.setDate(4,ourJavaDateObject);
 	         
-	         
 	         pstmt.executeUpdate();
          
-			rs = pstmt.getGeneratedKeys();
-			if(rs != null && rs.next()){
-	             System.out.println("Generated Emp Id: "+rs.getInt(1));
+			 rs = pstmt.getGeneratedKeys();
+			 if(rs != null && rs.next()){
+	             System.out.println("Generated Team Id: "+rs.getInt(1));
 	             teamId = rs.getInt(1);
 	         }
 		} catch (SQLException e) {
@@ -286,7 +294,7 @@ public class TeamEntryServlet extends HttpServlet {
 			Calendar calendar = Calendar.getInstance();
 		    java.sql.Date ourJavaDateObject = new java.sql.Date(calendar.getTime().getTime());
 		    
-		     SimpleDateFormat dt = new SimpleDateFormat("dd-MMM-yyyyy"); 
+		     SimpleDateFormat dt = new SimpleDateFormat("dd-mm-yyyyy"); 
 	         Date date = dt.parse(dob);
 	         
 			 String query = "insert into Sport_Database.PARTICIPANT (FNAME,MNAME,LNAME,DOB,AGE,ADDRESS_LINE1,STATE,CITY,PINCODE," +
@@ -302,8 +310,10 @@ public class TeamEntryServlet extends HttpServlet {
 	         pstmt.setString(8, city);	         
 	         pstmt.setInt(9, Integer.parseInt(pincode));
 	         pstmt.setString(10, gender);	         
-	         pstmt.setInt(11, Integer.parseInt(phone));
-	         pstmt.setInt(12, Integer.parseInt(emgphone));	         
+	         //pstmt.setInt(11, Integer.parseInt(phone));
+	         pstmt.setLong(11, Long.parseLong(phone));
+	         pstmt.setLong(12,Long.parseLong(emgphone));	         
+	         
 	         pstmt.setString(13, email);	         
 	         pstmt.setDate(14,ourJavaDateObject);
 	         pstmt.setDate(15,ourJavaDateObject);
@@ -318,19 +328,14 @@ public class TeamEntryServlet extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}        
          return participantId;         
-
-         
 	}
 	
 	private void insertTeamParti(int teamId,ArrayList<Integer> partiId){
 		
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		
 		for(int participantId : partiId){
 			
 			try {
@@ -338,9 +343,7 @@ public class TeamEntryServlet extends HttpServlet {
 		         pstmt = dbConnection.getCon().prepareStatement(query);
 		         pstmt.setInt(1, teamId);
 		         pstmt.setInt(2, participantId);
-		         
 		         pstmt.executeUpdate();         
-		         //rs = pstmt.executeQuery();			
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}finally{
@@ -354,7 +357,6 @@ public class TeamEntryServlet extends HttpServlet {
 	private void insertTeamGame(int teamId,int selectedGameId){
 		
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;		
 			try {
 				 Calendar calendar = Calendar.getInstance();
 			     java.sql.Date ourJavaDateObject = new java.sql.Date(calendar.getTime().getTime());
@@ -364,10 +366,8 @@ public class TeamEntryServlet extends HttpServlet {
 		         pstmt.setInt(1, teamId);
 		         pstmt.setInt(2, selectedGameId);
 		         pstmt.setDate(3,ourJavaDateObject);
-		         pstmt.setDate(4,ourJavaDateObject);
-		         
+		         pstmt.setDate(4,ourJavaDateObject);		         
 		         pstmt.executeUpdate();         
-		         //rs = pstmt.executeQuery();			
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}finally{

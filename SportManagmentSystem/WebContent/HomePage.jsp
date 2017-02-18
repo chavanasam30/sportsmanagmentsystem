@@ -14,7 +14,7 @@
 <body>
 <form>
 	<div class="heading">
-		<label>Dervnar Sport Event</label>
+		<label>Dervan Sport Event</label>
 	</div>
 <div class="demo-card-wide mdl-card mdl-shadow--2dp">
   
