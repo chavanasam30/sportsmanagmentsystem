@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="finanace">
+        <property name="context-root" value="finanace"/>
+        <property name="java-output-path" value="/finanace/build/classes"/>
+    </wb-module>
+</project-modules>

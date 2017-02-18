@@ -1,0 +1,11 @@
+package com.sport.event.servlet;
+
+public class Test {
+
+	public static void main(String args[]){
+		String s = "456432345";
+		
+		System.out.println(Integer.parseInt(s));
+		
+	}
+}

@@ -1,0 +1,131 @@
+ <h1>Entry Form</h1>
+ <form class="example-form">
+ 
+  <div *ngIf="nexttext!='Submit'">
+   <div   class="err" *ngFor="let e of err">
+ {{e}}
+ </div>
+	<form>
+  <div class="row">
+	<div class="three columns">
+      <label class ="label">Name</label>
+	</div>
+    <div class="three columns">
+      <input  placeholder="First Name" [(ngModel)]="firstname" name="firstname" required>
+    </div>
+	<div class="three columns">
+       <input  placeholder="Middle Name" required [(ngModel)]="middlename"  name="middlename">
+    </div>
+	<div class="three columns">
+       <input  placeholder="Last Name" required [(ngModel)]="lastname" name="lastname">
+    </div>
+  </div>
+  <div class="row">
+	<div class="three columns">
+       <label class ="label">Address One:</label>
+    </div>
+	<div class="nine columns">
+       <input  class="input" required [(ngModel)]="addr1" name="addr1"/>
+    </div>
+  </div>
+  <div class="row">
+	<div class="three columns">
+      <label class ="label" > Address Two:</label>
+    </div>
+	<div class="nine columns">
+       <input    class="input" [(ngModel)]="addr2"  name="addr2"/>
+    </div>
+  </div>
+  <div class="row">
+	<div class="four columns">
+      <label class ="label"> State:</label><select  [(ngModel)]="state" name="state"> 
+	  <option *ngFor="let states of india_states" [value]="states">
+			{{ states }}
+		</option>
+	  </select>
+    </div>
+	<div class="four columns">
+      <label class ="label"> City:</label>   <input md-input required [(ngModel)]="city"  name="city">
+    </div>
+	<div class="four columns">
+      <label class ="label"> Pin Code:</label>
+      <input  required [(ngModel)]="pincode" name="pincode">
+    </div>
+  </div>
+<hr/> 
+ <div class="row">
+   <div class="three columns">
+   <label class ="label"> Name Of the School/Club:</label>
+   </div>
+	<div class="nine columns">
+      <input [(ngModel)]="nameOfSchoolOrClub" class="input" name="nameOfSchoolOrClub" required/>
+    </div>
+	    </div>
+
+	 <div class="row">
+	<div class="three columns address">
+	<label class ="label">School/Club Address:</label>
+	</div>
+	<div class="nine columns">
+      <input  class="input" [(ngModel)]="addressOfSchoolOrClub" name="addressOfSchoolOrClub"/>
+    </div>
+  </div>
+   <div class="row">
+	<div class="four columns">
+      <label class ="label"> State:</label><select  [(ngModel)]="schoolstate" name="schoolstate" required> 
+	  <option *ngFor="let states of india_states" [value]="states">
+			{{ states }}
+		</option>
+	  </select>
+	</div>
+	<div class="four columns">
+      <label class ="label"> City:</label>   <input required [(ngModel)]="schoolcity"  name="schoolcity">
+    </div>
+	<div class="four columns">
+      <label class ="label"> Pin Code:</label>
+      <input  required [(ngModel)]="schoolpincode" name="schoolpincode">
+    </div>
+  </div>
+   <div class="row">
+<div class="two columns">	
+	<label class ="label">Gender:</label>
+	</div>
+	<div class="four columns">	
+	<select  [(ngModel)]="gender" name="gender" required> 
+	  <option [value]="B">Male</option>
+	  <option [value]="G">Female</option>
+	</select>
+	</div>
+   </div>
+ <div>
+ </div>
+  
+</form>
+	</div>
+<div *ngIf="nexttext=='Submit'">
+<md-card>
+	<md-select placeholder="Select Decipline" [(ngModel)]="selectedValue" name="dicipline"  (onChange)="selectDecipline()">
+	<md-option *ngFor="let decipline of deciplines" [value]="decipline">
+		{{ decipline }}
+	</md-option>
+	</md-select>
+	<button md-button (click)="go()">GO</button>
+	
+</md-card>
+<div *ngIf="arrylist!=undefined && arrylist.length>0" style="min-height: 200px;overflow: scroll;">
+	<div *ngFor="let e of arrylist">
+		 <button class="add" md-button (click)="add(e)">Add</button> {{e[getKey(e)[0]]}} 
+	</div>
+</div>
+<div *ngIf="addlist!=undefined && addlist.length>0"  style="min-height: 200px;">
+<hr/>
+<div style="font-weight: bold;font-size: 18px;">You Participated in below Activities</div>
+	<div *ngFor="let e of addlist">
+		 <button class="delete" md-button (click)="delet(e)">Delete</button>{{e[getKey(e)[1]]}}-{{((e[getKey(e)[2]]!=undefined)?e[getKey(e)[2]]:'')}} 
+	</div>
+</div>
+</div>
+
+	<button md-button *ngIf="nexttext=='Submit'" (click)="previous()">Previous</button>
+	<button md-button (click)="next()">{{nexttext}}</button>
+ </form>

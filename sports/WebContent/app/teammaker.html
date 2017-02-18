@@ -1,0 +1,53 @@
+<div class="heading">
+<h3>Create Team</h3>
+</div>
+ <form class="example-form" *ngIf="!addedSuccesfully" >
+ 
+  <div *ngIf="nexttext!='Submit'">
+  <md-card>
+	<md-select placeholder="Select Deciplines"  required [(ngModel)]="selecteddecipline" name="selecteddecipline" (ngModelChange)="populateages($event)">
+	<md-option *ngFor="let decipline of services.deciplines" [value]="decipline">
+		{{ decipline }}
+	</md-option>
+	</md-select>
+	<md-select placeholder="Select Category"  required [(ngModel)]="selectedcategory" name="selectedcategory" (ngModelChange)="populateages($event)">
+	<md-option *ngFor="let category of categorylist" [value]="category">
+		{{ category }}
+	</md-option>
+	</md-select>
+	<md-select placeholder="Select Age Group"  required [(ngModel)]="selectedagegroup" name="selectedagegroup">
+	<md-option *ngFor="let age of agegroup" [value]="getKey(agegroup)[0]">
+		{{ age[getKey(age)[0]] }}
+	</md-option>
+	</md-select>
+	<button md-mini-fab (click)="getCaptianList($event)"><md-icon>search</md-icon></button>
+	</md-card>
+	<md-select placeholder="Select The Captian"  required [(ngModel)]="captains" name="captains">
+	<md-option *ngFor="let captain of captianList" [value]="getKey(captain)[0]">
+		{{ age[getKey(captain)[0]] }}
+	</md-option>
+	</md-select><br/>
+	Add Memeber
+	<button md-mini-fab (click)="openDialog($event)"><md-icon>add</md-icon></button>
+	<md-list>
+  <h3 md-subheader>Team Members</h3>
+	<md-list-item class="header">
+		<md-icon md-list-avatar></md-icon>
+		<md-icon md-list-avatar></md-icon>
+		<div class="name">Member Names</div>
+	</md-list-item>
+	<md-list-item >
+		<md-icon md-list-avatar (click)="edit($event,members.id)">edit</md-icon>
+		<md-icon md-list-avatar (click)="delete($event,members.id)">delete</md-icon>
+		<p md-line> Ram </p>
+	</md-list-item>
+	<md-list-item >
+		<md-icon md-list-avatar (click)="edit($event,members.id)">edit</md-icon>
+		<md-icon md-list-avatar (click)="delete($event,members.id)">delete</md-icon>
+		<p md-line> Ram </p>
+	</md-list-item>
+  <md-divider></md-divider>
+</md-list>
+	
+	</div>
+ </form>

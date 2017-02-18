@@ -1,0 +1,146 @@
+@import 'node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css';
+body{
+	font-family: Open Sans;
+    font-size: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+.heading{
+	 background: blue;
+    background-repeat: no-repeat;
+    background-size: contain;
+	
+}
+h2 {
+  color: white;
+  font-size: 200%;
+  text-align: center;
+}
+h3 {
+  color: white;
+  font-size: 150%;
+  text-align: center;
+}
+h4 {
+  color: #369;
+}
+.blue{
+	color: #369;
+}
+form{
+	    margin: 15px;
+	
+}
+.email{
+	    width: 300px;
+}
+md-card{
+	padding-left: 0px !important;
+    box-shadow: none !important;
+	font-family:Open Sans !important;
+}
+.margins{
+	margin-left: 20px;
+}
+.address{
+	display:block;
+
+}
+.number{
+	width: 75px;
+}
+.err{
+	 color: red;
+    font-weight: 600;
+    text-align: center;
+	
+}
+.add{
+	color: green !important;
+    cursor: pointer !important;
+}
+.delete{
+	color: red !important;
+    cursor: pointer !important;
+}
+.label{
+	display: inline;
+    margin-right: 10px;
+}
+.input{
+	 width: 500px;
+	
+}
+.md-input-placeholder.md-empty{
+	color: blue;
+	font-family: Open Sans;
+}
+.submit{
+	margin: auto !important;
+    background: aliceblue !important;
+    color: blue !important;
+	font-weight: 700 !important;
+}
+.errormsg{
+	position: absolute;
+    background: rgba(254,47,64,0.3);
+    width: 300px;
+    text-align: center;
+    border: 2px solid rgba(244,67,54,.26);
+    border-radius: 10px;
+    padding: 10px;
+}
+.label{
+	    color: blue;
+}
+.activitylist{
+	height: 150px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.middle-elements{
+	    text-align: center  !important;
+}
+p{
+	color: #ff4081;
+}
+.state .md-select-trigger{
+	width:250px;
+	 color: blue !important;
+}
+.headerpart{
+	    background-image: url(./app/imgs/sports1.jpg);
+    min-height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.title{
+	font-size: 24px;
+    font-weight: bold;
+    color: blue;
+}
+.regNo{
+    color: #ff4081;
+    font-size: 30px;
+    font-weight: bold;
+}
+.md-checkbox-inner-container{
+	height:14px  !important;
+	Width:14px  !important;
+}
+.md-checkbox-label{
+	font-size:14px  !important;
+}
+[md-fab], [md-mini-fab] {
+    background-color: rgba(0, 0, 255, 0.46) !important;
+    color: #fff !important;
+}
+.popup{
+	height: 300px;
+}
+.header .name{
+	font-size: 20px;
+    font-weight: bold;
+}
+

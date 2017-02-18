@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;SportManagmentSystem&apos;&#x0A;- Original project: &apos;SportManagmentSystem&apos;&#x0A;- Original element: &apos;com.sports.userinterface.testgit.java&apos;" description="Delete element" element1="/src&lt;com.sports.userinterface{testgit.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1485609682552" subPackages="false" version="1.0"/>
+</session>

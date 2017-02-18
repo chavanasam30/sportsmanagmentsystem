@@ -1,0 +1,141 @@
+package com.sport.event.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONObject;
+
+import com.sports.dbconnections.DataBaseConnection;
+
+
+
+/**
+ * Servlet implementation class TeamEntryServlet
+ */
+public class TeamEntryServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private static DataBaseConnection dbConnection;
+	//private static Connection connection;
+	private static Statement statement;
+
+	
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public TeamEntryServlet() {    	
+        super();       
+        try {
+			dbConnection = new  DataBaseConnection ();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request,response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("In");
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+        response.setHeader("Cache-control", "no-cache, no-store");
+        response.setHeader("Pragma", "no-cache");
+        response.setHeader("Expires", "-1");
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "POST");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+        response.setHeader("Access-Control-Max-Age", "86400");
+        
+        String getType = request.getParameter("dataSend");
+        JSONObject jsonObject = null;
+		if(null != getType && !getType.trim().equalsIgnoreCase("")){
+			if(getType.equalsIgnoreCase("category")){
+				jsonObject = getGameCategory();
+			}else if(getType.equalsIgnoreCase("age")){
+				String category=request.getParameter("category");
+				System.out.println(category);
+				jsonObject = getAge(category);
+			}
+		}
+		
+		out.println(jsonObject.toString());
+	}
+	
+	private JSONObject getAge(String category){
+		JSONObject jsonobject=null;
+		try {
+			
+			jsonobject=new JSONObject();
+			
+			statement = dbConnection.getCon().createStatement();
+			ResultSet resultSetSlab = null;
+			String selectSlab="SELECT distinct(AGE_GRP) FROM Sport_Database.GAME WHERE TYPE='TEAM' and DISCIPLINE=" + category+ ;
+					
+			resultSetSlab = statement.executeQuery(selectSlab);
+			
+			while(resultSetSlab.next()){
+				String jsonValue=resultSetSlab.getString("DISCIPLINE");
+				jsonobject.put(jsonValue, jsonValue);
+			}
+			//connection.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		return jsonobject;
+	}
+
+	
+	private JSONObject getGameCategory(){
+		JSONObject jsonobject=null;
+		try {
+			
+			jsonobject=new JSONObject();
+			
+			statement = dbConnection.getCon().createStatement();
+			ResultSet resultSetSlab = null;
+			String selectSlab="SELECT distinct(DISCIPLINE) FROM Sport_Database.GAME WHERE TYPE='TEAM'";
+					
+			resultSetSlab = statement.executeQuery(selectSlab);
+			
+			while(resultSetSlab.next()){
+				String jsonValue=resultSetSlab.getString("DISCIPLINE");
+				jsonobject.put(jsonValue, jsonValue);
+			}
+			//connection.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		return jsonobject;
+	}
+	
+}
