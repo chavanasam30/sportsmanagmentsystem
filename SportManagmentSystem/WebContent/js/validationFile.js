@@ -26,49 +26,47 @@ function validateNumber(abc){
 	return true;
 }
 
-function validationslab(){
+function validationParticipant(){
 	var result=true;
-	if ((!validate($('#LEGAL_ENTITY'))) && result ==true){
+	if ((!validate($('#txtFName'))) && result ==true){
 		result=false;
-	}if ((!validate($('#BUSINESS_UNIT'))) && result ==true){
+	}if ((!validate($('#txtMName'))) && result ==true){
 		result=false;
-	}if ((!validate($('#CLIENT_ID'))) && result ==true){
+	}if ((!validate($('#txtLName'))) && result ==true){
 		result=false;
-	}if ((!validate($('#CLIENT_LOCATION_NO'))) && result ==true){
+	}if ((!validate($('#txtDateOfBirth'))) && result ==true){
 		result=false;
-	}if ((!validate($('#CLIENT_NAME'))) && result ==true){
+	}if ((!validateNumber($('#txtPhone'))) && result ==true){
 		result=false;
-	}if ((!validate($('#PRODUCT_ID'))) && result ==true){
+	}if ((!validateNumber($('#txtEmerPhone'))) && result ==true){
 		result=false;
-	}if ((!validate($('#PRODUCT_NAME'))) && result ==true){
+	}if ((!validate($('#txtAdd1'))) && result ==true){
 		result=false;
-	}if ((!validate($('#SLAB_CATEGORY'))) && result ==true){
+	}if ((!validate($('#txtAdd2'))) && result ==true){
 		result=false;
-	}if ((!validate($('#SLAB_TYPE'))) && result ==true){
+	}if ((!validate($('#txtCity'))) && result ==true){
 		result=false;
-	}if ((!validate($('#MIN_SLAB_VOLUME'))) && result ==true){
+	}if ((!validate($('#txtState'))) && result ==true){
 		result=false;
-	}if ((!validate($('#MAX_SLAB_VOLUME'))) && result ==true){
+	}if ((!validateNumber($('#txtPincode'))) && result ==true){
 		result=false;
-	}if ((!validate($('#CHARGES'))) && result ==true){
+	}if ((!validate($('#txtSch'))) && result ==true){
 		result=false;
-	}if ((!validate($('#ACTIVE'))) && result ==true){
+	}if ((!validate($('#selectGender'))) && result ==true){
+		result=false;
+	}if ((!validateNumber($('#txtSchPincode'))) && result ==true){
 		result=false;
 	}
+	
 	return result;
 }
-function validationsMeter(){
+function validationsUpdate(){
 	//alert("validationsMeter");
 	var result=true;
-	if ((!validate($('#CLIENT_NAME'))) && result ==true){
-		result=false;
-	}if ((!validate($('#TRANSACTION_TYPE'))) && result ==true){
-		result=false;
-	}if((!validate($('#CHARGES'))) && !validateNumber($('#CHARGES'))){
-		result=false;
-	}if ((!validate($('#QUANTITY'))) && !validateNumber($('#QUANTITY'))){
-		result=false;
+	if (!validateNumber($('#searchID'))){
+		return result=false;
 	}
+	
 	return result;
 }
 	function validation(){
