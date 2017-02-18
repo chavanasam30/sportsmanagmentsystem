@@ -22,7 +22,7 @@
 				</button>
 			</td>
 			<td>	
-				<button type="button" onclick="javascript:window.location='NewTeamEntry.jsp'">
+				<button type="button" onclick="javascript:window.location='UpdateParticipant.jsp'">
 					<img alt="" src="<%=request.getContextPath()%>/images/add-group-icon.png">
 				</button>
 	 		</td>

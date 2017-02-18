@@ -1,8 +1,47 @@
+@font-face {
+   font-family: 'Material Icons';
+   font-style: normal;
+   font-weight: 400;
+   src: url(iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+   src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(../font/MaterialIcons-Regular.woff2) format('woff2'),
+        url(../font/MaterialIcons-Regular.woff) format('woff'),
+        url(../font/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
 .chkLabel ,.labels,.radioLabel{
 font-family: sans-serif;
 font-weight: bold;
-color: black;
+color: goldenrod;
 }
+
 .astrik{
 	color:red;
 }
@@ -18,20 +57,33 @@ color: black;
 /* padding-top: 50px; */
 padding-left : 20px; 
 padding-right: 20px;
-/* padding-bottom: 20px; */
+padding-bottom: 60px;
 border: 1px blue dashed;
 position: relative;
 width: 970px;
 text-align: left;
 margin: 8px auto 0 auto;
 }
-.labels{
+.labels_category{
 min-width: 300px;
 float: left;
 font-weight: bold;
 font-size: 14px;
-
 }
+.labels_age{
+min-width: 300px;
+float: left;
+font-weight: bold;
+font-size: 14px;
+}
+.labels_gender{
+min-width: 300px;
+float: left;
+font-weight: bold;
+font-size: 14px;
+}
+
+
 
 .FadeIn{
 }
@@ -53,18 +105,18 @@ margin: 5px;
 padding: 10px;
 padding-bottom: 5px;
 }
-input[type="text"]{
+/*input[type="text"]{
 margin: 3px;
 border: 1px solid rgb(202, 233, 202);
 background: rgb(230, 238, 226);
-color: blue;
+color: green;
 width: 240px;
-}
+}*/
 input[type="password"]{
 margin: 3px;
 border: 1px solid rgb(202, 233, 202);
 background: rgb(230, 238, 226);
-color: blue;
+color: green;
 width: 240px;
 }
 /** Button Styles **/
@@ -75,7 +127,7 @@ box-shadow : 0px 0px 2px rgba(0,0,0,1.0);
 font-size : 20px;
 color : #ffffff;
 padding : 1px 17px;
-background : rgba(235, 143, 0, 0.94);
+background : #3f424a;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 11px;
 font-weight: bold;
@@ -90,7 +142,7 @@ box-shadow : 0px 0px 2px rgba(0,0,0,1.0);
 font-size : 20px;
 color : #ffffff;
 padding : 1px 17px;
-background : rgba(235, 143, 0, 0.94);
+background : #3f424a;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 11px;
 font-weight: bold;
@@ -133,35 +185,8 @@ margin-top: 20px;
     padding: 0.4em 0.8em;
     font-size: 1em;
 }
-.th  
-{
-	background-color:#6495ed;
-	color:white;	
-	word-wrap: break-word;
-}
-.table, .td, .th
-{
-	font-family:"Segoe UI";
-	font-size:12px;
-	border-bottom: 1px solid #b0c4de;
-	word-wrap: break-word; 
-}
-.table{
-	table-layout: fixed;
-	font-family:"Segoe UI";
-	font-size:12px;
-	text-align: center;
-	word-wrap: break-all;
-	width: 10px;
-}
-.th,.tr 
-{
-	/* border:1px solid black; */
-	background-color:#6495ed;
-	color:white;
-	word-wrap: break-word;
-	/* padding: 10px; */
-	/* width: 11em; */
+.dtp-content table{
+	margin:auto;
 }
 .confidential{
 	font-family:"Segoe UI";
@@ -171,15 +196,23 @@ margin-top: 20px;
 }
 .heading{
 background-color: #8da9e3;
-font-family: "Segoe UI";
-font-size: 22px;
-text-align: center;
-/* padding-left: 10px; */
-/* padding-right: 10px; */
-text-transform: uppercase;
-width: auto;
-min-height: auto;
-margin-top: 1px;
+    font-family: "Segoe UI";
+    font-size: 22px;
+    text-align: center;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
+    text-transform: uppercase;
+    width: auto;
+    min-height: auto;
+    margin-top: 1px;
+    line-height: normal;
+    font-size: 44px;
+    font-weight: 800;
+    background: #fbf8f8;
+    color: blue;
+}
+form{
+	margin:0px 15px;
 }
 input[type="file"]{
 border : solid 1px #e6e6e6;
@@ -193,4 +226,246 @@ font-size: 14px;
 font-weight: bold;
 height: auto;
 line-height: 38px;
+}
+.firstname{
+	float:left;
+	margin-right: 20px;
+}
+.lastname{
+	float:left;
+	margin-right: 20px;
+}
+.middlename{
+	float:left;
+	margin-right: 20px;
+}
+.dob{
+	float:left;
+	margin-right: 20px;
+}
+.age{
+	float:left;
+	margin-right: 20px;
+}
+.gender{
+	float:left;
+	margin-right: 20px;
+}
+.addressline{
+	float:left;
+	margin-right: 20px;
+}
+.state{
+	float:left;
+	margin-right: 20px;
+}
+.city{
+	float:left;
+	margin-right: 20px;
+}
+.pincode{
+	float:left;
+	margin-right: 20px;
+}
+.phone{
+	float:left;
+	margin-right: 20px;
+}
+.emergencyphone{
+	float:left;
+	margin-right: 20px;
+}
+.email{
+	float:left;
+	margin-right: 20px;
+}
+.mdl-card{
+	    width: 100%;
+	   min-height: auto;
+}
+.mdl-chip--contact {
+    margin: 0px 6px;
+}
+.mdl-chip__contact{
+	padding: 0px 10px;
+}
+.mdl-chip__text{
+	font-size: 14px;
+    font-weight: 700;
+    color: darkcyan;
+}
+
+.mdl-textfield__label{
+	color: #4caf50;
+}
+.label{
+	color: #4caf50;
+}
+
+.mdl-progress{
+	width: 295px;
+    
+    margin: 20px auto;
+}
+.inputteamname{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: palevioletred;
+}
+.clear-fix{
+	clear:both;
+}
+#newmemeber{
+	width:700px;
+	height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+$main-color: #284B72;
+$width: 325px;
+
+.ui-datepicker,
+.ui-datepicker-material-header {
+  font-family: 'Roboto';  
+}
+
+.ui-datepicker-material-header {
+  display: block;
+  background-color: $main-color;
+  color: white;
+  text-align: center;
+  width: $width;
+  
+  .ui-datepicker-material-day {
+    background-color: #1F3A58;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .ui-datepicker-material-date {
+    padding: 20px;
+    
+    .ui-datepicker-material-month,
+    .ui-datepicker-material-day-num,
+    .ui-datepicker-material-year {
+      padding: 5px;
+    }
+    .ui-datepicker-material-month {
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    
+    .ui-datepicker-material-day-num {
+      font-size: 4.5rem;
+    }
+    
+    .ui-datepicker-material-year {
+      font-size: 1.8rem;
+      font-weight: 200;
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
+
+.ui-datepicker {
+  padding: 0;
+  border: none;
+  box-shadow: 0 12px 36px 16px rgba(0,0,0,0.24);
+  width: $width;
+}
+
+.ui-corner-all {
+  border-radius: 0;
+}
+
+.ui-widget-header {
+  border: 0;
+}
+
+.ui-datepicker-header {
+  text-align: center;
+  background: white;
+  padding-bottom: 15px;
+  font-weight: 300;
+  
+  .ui-datepicker-prev,
+  .ui-datepicker-next,
+  .ui-datepicker-title {
+    border: none;
+    outline: none;
+    margin: 5px;
+  }
+}
+
+.ui-datepicker-prev.ui-state-hover,
+.ui-datepicker-next.ui-state-hover {
+  border: none;
+  outline: none;
+  background: lighten($main-color, 50%);
+}
+
+.ui-datepicker-calendar {
+  .ui-state-default {
+    background: none;
+    border: none;
+    text-align: center;
+    height: 33px;
+    width: 33px;
+    line-height: 36px;
+  }
+  
+  .ui-state-highlight {
+    color: $main-color;
+  }
+  
+  .ui-state-active {
+    border-radius: 50%;
+    background-color: $main-color;
+    color: white;
+  }
+  
+  thead th {
+    color: #999999;
+    font-weight: 200;
+  }
+}
+
+.ui-datepicker-buttonpane {
+  border: none;
+  
+  .ui-state-default {
+    background: white;
+    border: none;
+  }
+
+  .ui-datepicker-close,
+  .ui-datepicker-current {
+    background: white;
+    color: $main-color;
+    text-transform: uppercase;
+    border: none;
+    opacity: 1;
+    font-weight:200;
+    outline: none;
+    
+    &:hover {
+      background: lighten($main-color, 50%);
+    }
+  }
+}
+.tableHeader{
+	    text-align: center;
+	    font-size: 22px;
+    	font-weight: 400;
+}
+.tablerow{
+	  text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+.dobvals{
+color: #4daf60;
 }

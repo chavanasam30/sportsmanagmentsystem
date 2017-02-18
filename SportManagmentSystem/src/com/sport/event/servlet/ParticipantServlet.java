@@ -108,6 +108,7 @@ public class ParticipantServlet extends HttpServlet{
 				String schPincode = jsonobject.get("txtSchPincode").toString();
 				userName = jsonobject.get("txtUserName").toString();
 				
+				
 				insertIntoParticipantTables(fname,mname,lname,dateOfBirth,email,phone,emerPhone,add1,add2,city,state,pincode,
 						schoolName,schAdd1,schAdd2,schCity,
 						schstate,schPincode,ageJson,gender,userName);
@@ -180,13 +181,14 @@ public class ParticipantServlet extends HttpServlet{
 		
 	}
 
+	
 	private String getPartID(){
 		String partID = "";
 		
 		connection = dbConnection.getCon();
 		
 		try {
-			PreparedStatement stmt2 = connection.prepareStatement("SELECT PART_ID FROM Sport_Database.PARTICIPANT"
+			PreparedStatement stmt2 = connection.prepareStatement("SELECT PART_ID FROM PARTICIPANT"
 					+ " ORDER BY PART_ID DESC "
 					+ "LIMIT 1");
 		ResultSet resultSet = stmt2.executeQuery();
@@ -220,7 +222,7 @@ public class ParticipantServlet extends HttpServlet{
 		connection = dbConnection.getCon();
 	
 		try {
-			PreparedStatement stmt = connection.prepareStatement("insert into Sport_Database.PARTICIPANT(FNAME,MNAME,LNAME,"
+			PreparedStatement stmt = connection.prepareStatement("insert into PARTICIPANT(FNAME,MNAME,LNAME,"
 					+ "DOB,AGE,SCHOOL,ADDRESS_LINE1,ADDRESS_LINE2,STATE,CITY,PINCODE,SCHOOL_ADDRESS_LINE1,"
 					+ "SCHOOL_ADDRESS_LINE2,SCHOOL_STATE,SCHOOL_CITY,SCHOOL_PINCODE,GENDER,PHONE,EMER_PHONE,EMAIL_ID,INSERT_USER_NAME) "
 					+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -264,7 +266,7 @@ public class ParticipantServlet extends HttpServlet{
 		connection = dbConnection.getCon();
 		PreparedStatement stmt = null;
 		try {
-			String query = "insert into Sport_Database.PARTI_GAME(PART_ID,GAME_ID,INSERT_USER_NAME) "
+			String query = "insert into PARTI_GAME(PART_ID,GAME_ID,INSERT_USER_NAME) "
 					+ "values(?,?,?)";
 			stmt = connection.prepareStatement(query);
 			

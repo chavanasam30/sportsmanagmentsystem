@@ -6,14 +6,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/jquery-ui.structure.css">
+<%-- <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/jquery-ui.structure.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/jquery-ui.theme.css">
 
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/style.css">
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.1.7.2.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/validationFile.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-ui.js"></script> 
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.currency.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.currency.js"></script>  --%>
+
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/material.min.css"/>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/style.css"/>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/font/material-icons.css"/>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/material.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/validationFile.js"></script> 
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.1.7.2.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-ui.js"></script> 
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery.currency.js"></script> 
+
 
 
 <script type="text/javascript">
@@ -54,7 +64,7 @@ $(document).ready(function(){
 	
 	$(".dateTimePicker1").datepicker({
 	    showOn: "button",
-	    buttonImage: "images/calender.jpg",
+	    buttonImage: "css/images/calendar.png",
 	    buttonImageOnly: true,
 	    buttonText: "",
 	    dateFormat:"dd-M-yy", 
@@ -64,9 +74,9 @@ $(document).ready(function(){
            maxDate: '-1d'
 	  });
 	
-	$("#gameBtn").click(function(){
+	 $("#gameBtn").click(function(){ 
 		$("#gameDiv").show();
-		
+		if(validationParticipant()){
 		var jsonData={
 				"txtFName":$("#txtFName").val(),
 				"txtMName":$("#txtMName").val(),
@@ -122,7 +132,10 @@ $(document).ready(function(){
 	        		console.log(status);
 	 			}
 	 		});
-			
+		 }else{
+			 $("#gameDiv").hide();
+			 alert("Errors : Please Fill the Required Fields");
+		 }
 		});
 	
 	$("#addBtn").click(function(){
@@ -144,7 +157,8 @@ $(document).ready(function(){
 	            {
 		    	   var e=jQuery.parseJSON(data);
 		    	   console.log(e);
-		    	   alert("Your Participant ID is : "+e.partID);   
+		    	   alert("Your Participant ID is : "+e.partID);  
+		    	   document.getElementById("cform").reset();
 	            }
 		});
 		
@@ -157,135 +171,168 @@ $(document).ready(function(){
 <title>New Participant Entry</title>
 </head>
 <body>
-	<form method="post">
-		<div class="container">
-				<div><h3>PERSONAL INFORMATION</h3></div>
-					<table>
-						<tr>
-							<td>
-								<div class="labels">FIRST NAME<span class="astrik">*</span> :</div>
-							</td>
-							<td>
-								<div class="labels">MIDDLE NAME<span class="astrik">*</span> :</div>
-							</td>
-							<td>
-								<div class="labels">LAST NAME<span class="astrik">*</span> :</div>
-							</td>
-						</tr>	
-						<tr>
-							<td>
-								<div><input type="text" name="txtFName" id="txtFName"/></div>
-							</td>
-							<td>
-								<div><input type="text" name="txtMName" id="txtMName"/></div>
-							</td>
-							<td>
-								<div><input type="text" name="txtLName" id="txtLName"/></div>
-							</td>
-						</tr>	
-						<tr>
-							<td><div class="labels">DATE OF BIRTH<span class="astrik">*</span> :</div></td>
-							<td><div class="labels">AGE :</div></td>
-							<td><div class="labels">GENDER<span class="astrik">*</span> :</div></td>
-						</tr>
-						<tr>
-							<td><input type="text" class="dateTimePicker1" name="txtDateOfBirth" id="txtDateOfBirth" /></td>
-							<td><input type="text" name="txtAge" id="txtAge" disabled="disabled"/></td>
-							<td>
-								<select class="dropdown-menu" id="selectGender" name="selectGender" >
+	<form method="post" id="cform">
+		<div class="mdl-dialog__content">
+				<h5>PERSONAL INFORMATION</h5>
+							<div class="mdl-grid">
+							<div class="mdl-cell mdl-cell--4-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input type="text" name="txtFName" id="txtFName" class="mdl-textfield__input"/>
+									<label class="mdl-textfield__label" for="txtFName">First name</label>
+								</div>
+							</div>	
+							<div class="mdl-cell mdl-cell--4-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input type="text" name="txtMName" id="txtMName" class="mdl-textfield__input"/>
+									<label class="mdl-textfield__label" for="txtMName">Middle name</label>
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--4-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input type="text" name="txtLName" id="txtLName" class="mdl-textfield__input"/>
+									<label class="mdl-textfield__label" for="txtLName">Surname</label>
+								</div>
+							</div>	
+							<div class="mdl-cell mdl-cell--4-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<span class="mdl-textfield__label">Date</span>
+									<input type="text" class="dateTimePicker1 mdl-textfield__input" name="txtDateOfBirth" id="txtDateOfBirth" />
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--4-col">
+								<div class="mdl-textfield mdl-js-textfield">
+									<label class="mdl-textfield__label" for="mdl-textfield__input"></label>
+									<input type="text" name="txtAge" id="txtAge" disabled="disabled" class="mdl-textfield__input"/>
+									
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--4-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								<select id="selectGender" name="selectGender" class="mdl-textfield__input" >
+									<option value=""></option>
 									<option value="G">Girl</option>
 									<option value="B">Boy</option>
 								</select>
-							</td>
-						</tr> 
-						<tr>
-							<td><div class="labels">EMAIL ID : </div></td>
-							<td><div class="labels">PHONE<span class="astrik">*</span>: </div></td>
-							<td><div class="labels">EMERGENCY PHONE<span class="astrik">*</span>: </div></td>                                              
-						</tr>
-						<tr>
-							<td><input type="text" name="txtEmailId" id="txtEmailId"/></td>
-							<td><input type="text" name="txtPhone" id="txtPhone"/></td>
-							<td><input type="text" name="txtEmerPhone" id="txtEmerPhone"/></td>
-						</tr>
-				</table>
-		 </div>		
-		<div class="container">
-			<div><h3>ADDRESS</h3></div>
-			<table>
-				<tr>
-					<td><div class="labels">ADDRESS LINE 1<span class="astrik">*</span>: </div></td>
-					<td><div class="labels">ADDRESS LINE 2: </div></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="txtAdd1" id="txtAdd1"/></td>
-					<td><input type="text" name="txtAdd2" id="txtAdd2"/></td>
-				</tr>
-				<tr>
-					<td><div class="labels">CITY<span class="astrik">*</span>: </div></td>
-					<td><div class="labels">STATE<span class="astrik">*</span>: </div></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="txtCity" id="txtCity"/></td>
-					<td><input type="text" name="txtState" id="txtState"/></td>
-				</tr>
-				<tr>
-					<td><div class="labels">PINCODE<span class="astrik">*</span>: </div></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="txtPincode" id="txtPincode"/></td>
-				</tr>
-			</table>
+								 <label class="mdl-textfield__label" for="selectGender">Gender</label>
+							</div>
+							</div>	
+							<div class="mdl-cell mdl-cell--4-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input type="text" name="txtEmailId" id="txtEmailId" class="mdl-textfield__input"/>
+									<label class="mdl-textfield__label" for="txtEmailId">Email-Id</label>
+								</div>
+							</div>		
+							<div class="mdl-cell mdl-cell--4-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input type="text" name="txtPhone" id="txtPhone" class="mdl-textfield__input"/>
+									<label class="mdl-textfield__label" for="txtPhone">Phone</label>
+								</div>
+							</div>	
+							<div class="mdl-cell mdl-cell--4-col">
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+									<input type="text" name="txtEmerPhone" id="txtEmerPhone" class="mdl-textfield__input"/>
+									<label class="mdl-textfield__label" for="txtEmerPhone">Emergency Phone</label>
+								</div>
+							</div>		
+		 </div>
+		 <h5>ADDRESS</h5>		
+		 <div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtAdd1" id="txtAdd1" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtAdd1">Address Line 1</label>
+						</div>
+					</div>		
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtAdd2" id="txtAdd2" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtAdd2">Address Line 2</label>
+						</div>
+					</div>	
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtCity" id="txtCity" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtCity">City</label>
+						</div>
+					</div>		
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtState" id="txtState" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtState">State</label>
+						</div>
+					</div>		
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtPincode" id="txtPincode" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtPincode">Pincode</label>
+						</div>
+					</div>	
 		</div>
-		<div class="container">
-			<div><h3>SCHOOL ADDRESS</h3></div>
-			<table>
-				<tr>
-					<td><div class="labels">SCHOOL NAME<span class="astrik">*</span>: </div></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="txtSch" id="txtSch"/></td>
-				</tr>
-				<tr>
-					<td><div class="labels">SCHOOL ADDRESS LINE 1<span class="astrik">*</span>: </div></td>
-					<td><div class="labels">SCHOOL ADDRESS LINE 2: </div></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="txtSchAdd1" id="txtSchAdd1"/></td>
-					<td><input type="text" name="txtSchAdd2" id="txtSchAdd2"/></td>
-				</tr>
-				<tr>
-					<td><div class="labels">SCHOOL CITY<span class="astrik">*</span>: </div></td>
-					<td><div class="labels">SCHOOL STATE<span class="astrik">*</span>: </div></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="txtSchCity" id="txtSchCity"/></td>
-					<td><input type="text" name="txtSchState" id="txtSchState"/></td>
-				</tr>
-				<tr>
-					<td><div class="labels">SCHOOL PINCODE<span class="astrik">*</span>: </div></td>
-				</tr>
-				<tr>
-					<td><input type="text" name="txtSchPincode" id="txtSchPincode"/></td>
-				</tr>
-			</table>
+		<h5>SCHOOL ADDRESS</h5>
+		<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtSch" id="txtSch" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtSch">School Name</label>
+						</div>
+					</div>		
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtSchAdd1" id="txtSchAdd1" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtSchAdd1">School Address Line 1</label>
+						</div>
+					</div>	
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtSchAdd2" id="txtSchAdd2" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtSchAdd2">School Address Line 2</label>
+						</div>
+					</div>	
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtSchCity" id="txtSchCity" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtSchCity">School City</label>
+						</div>
+					</div>
+					<!-- </td>
+					<td> -->
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtSchState" id="txtSchState" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtSchState">School State</label>
+						</div>
+					</div>		
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtSchPincode" id="txtSchPincode" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtSchPincode">School Pincode</label>
+						</div>
+					</div>
 		</div>
-		<div class="container">
-			<table>
-				<tr>
-					<td><div class="labels">INSERT USER NAME: </div></td>
-					<td><input type="text" name="txtUserName" id="txtUserName"/></td>
-					<td><div class="buttondiv"><input type="button" value="Next" id="gameBtn" style="float: right;"></div></td>
-				</tr>
-				
-			</table>
+		<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input type="text" name="txtUserName" id="txtUserName" class="mdl-textfield__input"/>
+							<label class="mdl-textfield__label" for="txtUserName">User name</label>
+						</div>
+					</div>
+					<div class="mdl-dialog__actions">
+						<button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent searching" 
+					id="gameBtn" >Next</button>
+					
+					</div>
 		</div>
-		<div class="hiddenDiv" id="gameDiv">
+		<div  id="gameDiv">
 			<div class="container">
-				
-						<div class="labels">SELECT GAME NAMES YOU WANT TO PARTICIPATE: </div>
+						<label class="mdl-textfield__label">SELECT GAME NAMES YOU WANT TO PARTICIPATE:</label>
+						<div></div><div></div>
 						<div id="gameEvent"></div>				
-						<div class="buttondiv"><input type="button" value="Add" id="addBtn" style="float: right;"></div>	
+						<div class="mdl-dialog__actions">
+						<button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent insert" 
+					id="addBtn" >
+						Add
+					</button>
+					</div>	
 	
 			</div>	
 		</div>

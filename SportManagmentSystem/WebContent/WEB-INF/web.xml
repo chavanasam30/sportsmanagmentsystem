@@ -12,4 +12,12 @@
     <servlet-name>ParticipantServlet</servlet-name>
     <url-pattern>/newParticipant</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <servlet-name>PaticipantUpdateServlet</servlet-name>
+    <servlet-class>com.sport.event.servlet.PaticipantUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PaticipantUpdateServlet</servlet-name>
+    <url-pattern>/updateParticipant</url-pattern>
+  </servlet-mapping>
 </web-app>
