@@ -27,8 +27,13 @@
     <img class="mdl-chip__contact" src="<%=request.getContextPath()%>/images/add-group-icon.png"></img>
     <span class="mdl-chip__text">Create Team</span>
 </span>
-
-  </div>
+</div>
+<div class="mdl-card__actions mdl-card--border">
+<span class="mdl-chip mdl-chip--contact" onclick="javascript:window.location='UpdateParticipant.jsp'">
+	<img class="mdl-chip__contact" src="<%=request.getContextPath()%>/images/update_user.png"></img>    
+    <span class="mdl-chip__text">Update Participant</span>
+</span>
+</div>  
   
 </div>
 
