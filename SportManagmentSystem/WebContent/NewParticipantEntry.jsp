@@ -133,6 +133,7 @@ $(document).ready(function(){
 	
 	 $("#gameBtn").click(function(){ 
 		$("#gameDiv").show();
+		
 		if(validationParticipant()){
 		var jsonData={
 				"txtFName":$("#txtFName").val(),
@@ -164,6 +165,7 @@ $(document).ready(function(){
 		       success:function(data, textStatus, jqXHR)
 	            {
 		    	   $("#gameEvent").empty();
+		    	   /* $("#gameEvent").append("<br>"); */
 		    	   var e=jQuery.parseJSON(data);
 		    	   console.log(e);
 		    	   if(e!=undefined && e!=null && e!="" ){
@@ -172,7 +174,7 @@ $(document).ready(function(){
 		    			   if(e[key]!=undefined && e[key]!=null && e[key]!="" ){
 		    				   $.each(e[key], function(key, value){
 		    					   console.log(key+" : "+value);
-		    					   $("#gameEvent").append("<h5>"+key+"</h5>");
+		    					   $("#gameEvent").append("<h6>"+key+"</h6>");
 		    					   $.each(value, function(key1, value1){
 		    						   console.log(key1+" :: "+value1);
 		    						   $("#gameEvent").append("<input type='checkbox' name='sport' id='"+key1+"' value='"+value1+"'/>"+value1+"<br/>");
@@ -215,6 +217,8 @@ $(document).ready(function(){
 		    	   console.log(e);
 		    	   alert("Your Participant ID is : "+e.partID);  
 		    	   document.getElementById("cform").reset();
+		    	   $('#ageText').text("");
+		    	   $("#gameDiv").hide();
 	            }
 		});
 		
@@ -228,8 +232,9 @@ $(document).ready(function(){
 </head>
 <body>
 	<form method="post" id="cform">
+	<h5>Participant Registration</h5>
 		<div class="mdl-dialog__content">
-				<h5>PERSONAL INFORMATION</h5>
+				<h6>PERSONAL INFORMATION</h6>
 							<div class="mdl-grid">
 							<div class="mdl-cell mdl-cell--4-col">
 								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -249,15 +254,15 @@ $(document).ready(function(){
 									<label class="mdl-textfield__label" for="txtLName">Surname</label>
 								</div>
 							</div>	
-                			<div class="mdl-cell mdl-cell--6-col dobvals">
-				                   <label>Date of Birth</label>
+                			<div class="mdl-cell mdl-cell--4-col dobvals">
+				                   <label><h6>Date of Birth</h6></label>
 				                   <select id="day"><option val="0">DD<option></select>
 				                   <select id="month"><option val="0">MM<option></select>
 				                   <select id="year"><option val="0">YYYY<option></select>
 				               </div>
-				                <div class="mdl-cell mdl-cell--6-col dobvals">
-				                        Age:
-				                        <span id="ageText" name="ageText"></label>
+				                <div class="mdl-cell mdl-cell--4-col dobvals">
+				                        <h6>Age:</h6>
+				                        <span id="ageText" name="ageText"></span>
 				                </div>
 							<div class="mdl-cell mdl-cell--4-col">
 								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -288,7 +293,7 @@ $(document).ready(function(){
 								</div>
 							</div>		
 		 </div>
-		 <h5>ADDRESS</h5>		
+		 <h6>ADDRESS</h6>		
 		 <div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -321,7 +326,7 @@ $(document).ready(function(){
 						</div>
 					</div>	
 		</div>
-		<h5>SCHOOL ADDRESS</h5>
+		<h6>SCHOOL ADDRESS</h6>
 		<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--4-col">
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -364,24 +369,22 @@ $(document).ready(function(){
 		</div>
 		<div class="mdl-grid">
 					<div class="mdl-dialog__actions">
-						<button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent searching" 
+						<button type="button" class="mdl-button--fab mdl-button--accent" 
 					id="gameBtn" >Next</button>
 					
 					</div>
 		</div>
 		<div  id="gameDiv">
-			<div class="container">
+			<div class="mdl-grid">
+					<div id="gameEvent">
 						<label class="mdl-textfield__label">SELECT GAME NAMES YOU WANT TO PARTICIPATE:</label>
-						<div></div><div></div>
-						<div id="gameEvent"></div>				
-						<div class="mdl-dialog__actions">
-						<button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent insert" 
-					id="addBtn" >
-						Add
-					</button>
+					</div>				
+			</div>			
+					<div class="mdl-dialog__content">
+						<button type="button" class="mdl-button--fab mdl-button--accent" id="addBtn">Add</button>
 					</div>	
 	
-			</div>	
+			
 		</div>
 	
 	</form>

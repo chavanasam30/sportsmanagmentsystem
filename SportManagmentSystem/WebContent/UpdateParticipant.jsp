@@ -19,6 +19,7 @@ $(document).ready(function(){
 	$("#tablediv").hide(); 
 
 	$("#searchBtn").click(function(){
+		if(validations()){		
 		var jsonData={
 				"searchID":$('#searchID').val(),
 				"searchFName":$('#searchFName').val(),
@@ -28,7 +29,7 @@ $(document).ready(function(){
 		};
 		$.ajax({
 		       type: "post",
-		       url:"updateParticipant",
+		       url:"/SportManagmentSystem/updateParticipant",
 		       data:{dataSearch:JSON.stringify(jsonData)},   
 		       datatype:"json",
 		       success:function(data, textStatus, jqXHR)
@@ -40,6 +41,9 @@ $(document).ready(function(){
 		    	   console.log("submit:"+data);
 		    	   console.log("length :"+data.length);
  
+		    	   if(!(data.length > 0)){
+		    		   $("#tablediv").hide(); 
+		    	   }else{
 		           $.each(data, function(index, participant) {  
 		            	trHTML += '<tr class=\"tablerow\"><td id=\"PART_ID\" >' + participant.PART_ID 
 		            	+ '</td><td id=\"FNAME\">' + participant.FNAME 
@@ -268,17 +272,24 @@ $(document).ready(function(){
 						
 		            	
 		            }); 
-		    	   
+		    	   }
 		            $('#participanttable').append(trHTML);
-		    	  // }                  
+		    	                  
 	            },
 	            error:function(xhr,status)
 	            {
 	                 console.log(status);
-	             }
-	            });	
+	                 $("#tablediv").hide(); 
+	             }	
+		
+			});	
+		}else{
+			$("#tablediv").hide();  
+			alert("Error : Please Enter atlest one parameter to search ");
 			
-		 });  
+		}
+		
+	});  
 	
 	
 });
@@ -322,14 +333,14 @@ $(document).ready(function(){
 	</div>
 	<div class="mdl-cell mdl-cell--4-col">
 	<div class="mdl-dialog__actions">
-		<button type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect  mdl-button--accent" 
-					id="searchBtn" >Search</button>
+		<button type="button" class="mdl-button--accent" 
+					id="searchBtn">Search</button>
 	</div>
 </div>
 </div>	
 </div>	
 <div id="tablediv">
-<table id="participanttable" > 
+<table id="participanttable" border="1px solid black;" > 
     <tr class="tableHeader"> 
         <th>Participant ID</th> 
         <th>First Name</th> 

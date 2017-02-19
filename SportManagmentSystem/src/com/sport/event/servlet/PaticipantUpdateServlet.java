@@ -84,15 +84,19 @@ public class PaticipantUpdateServlet extends HttpServlet{
 					String searchLName = jsonobject.get("searchLName").toString();
 					String searchPhone = jsonobject.get("searchPhone").toString();		
 					
+					if(searchID.equalsIgnoreCase("") && searchFName.equalsIgnoreCase("") && searchMName.equalsIgnoreCase("") && searchLName.equalsIgnoreCase("") && searchPhone.equalsIgnoreCase("")){
+						jsonobject.put("status","error" );
+					}else{
 					List<Map<String, Object>> participantList = getSearchPaticipant(searchID,searchFName,searchMName,searchLName,searchPhone);
 					
-					Gson gson = new Gson();
+						Gson gson = new Gson();
 					
 					  String jsonString= gson.toJson(participantList);
 					  System.out.println("jsonString" +jsonString);
 					  response.setContentType("application/json");
 					  response.setCharacterEncoding("UTF-8");
 					  response.getWriter().write(jsonString);
+					}
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
