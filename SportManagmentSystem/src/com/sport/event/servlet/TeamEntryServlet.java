@@ -277,6 +277,8 @@ public class TeamEntryServlet extends HttpServlet {
 	             System.out.println("Generated Team Id: "+rs.getInt(1));
 	             teamId = rs.getInt(1);
 	         }
+			 
+			 dbConnection.getCon().commit();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}        
@@ -325,6 +327,7 @@ public class TeamEntryServlet extends HttpServlet {
 	             System.out.println("Generated Participant Id: "+rs.getInt(1));
 	             participantId = rs.getInt(1);
 	         }
+			dbConnection.getCon().commit();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
@@ -339,11 +342,12 @@ public class TeamEntryServlet extends HttpServlet {
 		for(int participantId : partiId){
 			
 			try {
-				 String query = "insert into TEAM_PARTI (TEAM_ID,PART_ID) values (?,?)";
+				 String query = "insert into Sport_Database.PARTI_GAME (TEAM_ID,PART_ID) values (?,?)";
 		         pstmt = dbConnection.getCon().prepareStatement(query);
 		         pstmt.setInt(1, teamId);
 		         pstmt.setInt(2, participantId);
-		         pstmt.executeUpdate();         
+		         pstmt.executeUpdate();    
+		         dbConnection.getCon().commit();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}finally{
@@ -361,13 +365,14 @@ public class TeamEntryServlet extends HttpServlet {
 				 Calendar calendar = Calendar.getInstance();
 			     java.sql.Date ourJavaDateObject = new java.sql.Date(calendar.getTime().getTime());
 			    
-				 String query = "insert into TEAM_GAME (TEAM_ID,GAME_ID,INSERT_DATE_TIME,UPDATE_DATE_TIME) values (?,?,?,?)";
+				 String query = "insert into Sport_Database.TEAM_GAME (TEAM_ID,GAME_ID,INSERT_DATE_TIME,UPDATE_DATE_TIME) values (?,?,?,?)";
 		         pstmt = dbConnection.getCon().prepareStatement(query);
 		         pstmt.setInt(1, teamId);
 		         pstmt.setInt(2, selectedGameId);
 		         pstmt.setDate(3,ourJavaDateObject);
 		         pstmt.setDate(4,ourJavaDateObject);		         
-		         pstmt.executeUpdate();         
+		         pstmt.executeUpdate(); 
+		         dbConnection.getCon().commit();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}finally{

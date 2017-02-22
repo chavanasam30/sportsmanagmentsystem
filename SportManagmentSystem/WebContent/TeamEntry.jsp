@@ -764,7 +764,7 @@ $(document).ready(function(){
         	<div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--4-col">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="stateText" maxlength="2">
+                        <input class="mdl-textfield__input" type="text" id="stateText" maxlength="19">
                         <label class="mdl-textfield__label" for="stateText">State</label>
                     </div>
                     
