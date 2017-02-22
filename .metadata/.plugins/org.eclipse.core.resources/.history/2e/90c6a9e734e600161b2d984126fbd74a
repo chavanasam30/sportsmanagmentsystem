@@ -1,0 +1,5 @@
+package com.sport.event.servlet;
+
+public class TeamEntryServlet {
+
+}

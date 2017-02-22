@@ -1,0 +1,146 @@
+
+ <form class="example-form" *ngIf="!addedSuccesfully" >
+  <div *ngIf="nexttext!='Submit'">
+   
+	<md-input-container>
+      <input md-input placeholder="Name" [(ngModel)]="firstname" name="firstname" required>
+    </md-input-container>
+	<md-input-container >
+      <input md-input placeholder="Father Name" [(ngModel)]="middlename"  name="middlename">
+    </md-input-container>
+	<md-input-container >
+      <input md-input placeholder="Surname" required [(ngModel)]="lastname" name="lastname">
+    </md-input-container>
+	 <md-input-container class="address">
+      <textarea md-input placeholder="Address" required [(ngModel)]="addr1" name="addr1"></textarea>
+    </md-input-container>
+    <!--md-input-container class="address" >
+      <textarea md-input placeholder="Address 2" [(ngModel)]="addr2"  name="addr2"></textarea>
+    </md-input-container-->
+	<md-select class="state" placeholder="State" [(ngModel)]="state" required  name="state">
+	<md-option *ngFor="let decipline of india_states" [value]="decipline">
+		{{ decipline }}
+	</md-option>
+	</md-select>
+	<!--md-input-container>
+      <input md-input placeholder="State" [(ngModel)]="state" name="state" required>
+    </md-input-container-->
+	<md-input-container >
+      <input md-input placeholder="City/Taluka" required [(ngModel)]="city"  name="city">
+    </md-input-container>
+	<md-input-container >
+      <input md-input placeholder="Pin Code" required [(ngModel)]="pincode" name="pincode"  maxlength="6">
+    </md-input-container>
+	 <md-input-container class="address">
+      <textarea md-input placeholder="Name Of the School/Club" [(ngModel)]="nameOfSchoolOrClub" name="nameOfSchoolOrClub" required></textarea>
+    </md-input-container>
+    <md-input-container class="address" >
+      <textarea md-input placeholder="School/Club Address" required [(ngModel)]="addressOfSchoolOrClub" name="addressOfSchoolOrClub"></textarea>
+    </md-input-container>
+	<!--md-input-container class="address" >
+      <textarea md-input placeholder="School/Club Address 2" [(ngModel)]="address2OfSchoolOrClub" name="address2OfSchoolOrClub"></textarea>
+    </md-input-container-->
+	<md-select  class="state"  placeholder="State"  required [(ngModel)]="schoolstate" name="schoolstate">
+	<md-option *ngFor="let decipline of india_states" [value]="decipline">
+		{{ decipline }}
+	</md-option>
+	</md-select>
+	<!--md-input-container>
+      <input md-input placeholder="State" [(ngModel)]="schoolstate" name="schoolstate" required>
+    </md-input-container-->
+	<md-input-container >
+      <input md-input placeholder="City/Taluka" required [(ngModel)]="schoolcity"  name="schoolcity">
+    </md-input-container>
+	<md-input-container >
+      <input md-input placeholder="Pin Code" required [(ngModel)]="schoolpincode" name="schoolpincode" maxlength="6">
+    </md-input-container>
+	<md-card>
+		<label class="label">Gender: </label>
+		<md-radio-group [(value)]="gender">
+		<md-radio-button (click)="gender='B'"   name="symbol" value="B">Male</md-radio-button>
+		<md-radio-button (click)="gender='G'"  name="symbol" value="G">Female</md-radio-button>
+		</md-radio-group>
+		<md-card>
+		<br/><label  class="label">Date of Birth:</label>
+		<!--material-datepicker (onSelect)="calculateAge()" placeholder="Date Of Birth" name="dob"  dateFormat="dd-mm-yyyy" [(date)]=dob  [(rangeStart)]=minDate [(rangeEnd)]=maxDate></material-datepicker-->
+		<md-select placeholder="Day" [(ngModel)]="day" name="day" required  (ngModelChange)="calAge($event)">
+			<md-option *ngFor="let i of daylist" [value]="i">
+				{{i}}
+			</md-option>
+		</md-select>
+		<md-select placeholder="Month" [(ngModel)]="month" name="month" required  (ngModelChange)="calAge($event)">
+			<md-option *ngFor="let i of monthlist;let e = index" [value]="e+1">
+				{{i}}
+			</md-option>
+		</md-select>
+		<md-select placeholder="Year" [(ngModel)]="year" name="year" required (ngModelChange)="calAge($event)">
+			<md-option *ngFor="let i of years" [value]="i">
+				{{i}}
+			</md-option>
+		</md-select>
+		<label  class="label margins">	Age:</label> <md-input-container class="number" >
+			<input md-input disabled type="number" placeholder="Years" [(ngModel)]="yrs" name="yrs" >
+		</md-input-container>
+		<md-input-container class="number"  >
+			<input md-input disabled  type="number" placeholder="Months" [(ngModel)]="months" name="months">
+		</md-input-container>
+		</md-card>
+	
+	</md-card>
+	<md-card>
+		<md-input-container >
+			<input md-input placeholder="Mobile Number" [(ngModel)]="contactno" name="contactno" required maxlength="10">
+		</md-input-container>
+		<md-input-container >
+			<input md-input placeholder="Emergence Number" [(ngModel)]="alternativeno" name="alternativeno" required maxlength="10">
+		</md-input-container>
+		<md-input-container class="email" >
+			<input md-input placeholder="Email-Id" required [(ngModel)]="email" name="email" type="email">
+		</md-input-container>
+	</md-card>
+	<md-card>
+		<label  class="label">Payment Date:</label>
+		<!--material-datepicker (onSelect)="calculateAge()" placeholder="Date Of Birth" name="dob"  dateFormat="dd-mm-yyyy" [(date)]=dob  [(rangeStart)]=minDate [(rangeEnd)]=maxDate></material-datepicker-->
+		<md-select placeholder="Day" [(ngModel)]="pday" name="pday">
+			<md-option *ngFor="let i of daylist" [value]="i">
+				{{i}}
+			</md-option>
+		</md-select>
+		<md-select placeholder="Month" [(ngModel)]="pmonth" name="pmonth">
+			<md-option *ngFor="let i of monthlist;let e = index" [value]="e+1">
+				{{i}}
+			</md-option>
+		</md-select>
+		<md-select placeholder="Year" [(ngModel)]="pyear" name="pyear" >
+			<md-option [value]="2017">
+				2017
+			</md-option>
+		</md-select>
+		<md-input-container class="email" >
+			<input md-input placeholder="Bank Details" [(ngModel)]="bankDetails" name="bankDetails">
+		</md-input-container>
+	</md-card>
+	</div>
+<div>
+<p *ngIf="getKeys(arrlist1).length>0">Please Select Decipline and Event you wish to participate in</p>
+<div *ngFor="let decipline of getKeys(arrlist1)" >
+<div *ngIf="arrlist1[decipline]!=undefined && arrlist1[decipline].length>0" >
+
+	<div class="title">{{decipline}}</div>
+	<div  *ngFor="let e of arrlist1[decipline]" (click)="addorremove($event,e)"><md-checkbox *ngIf="isEligible(e)">{{e[getKey(e)[0]]}} </md-checkbox></div>
+</div>
+</div>
+</div>
+<md-card class="middle-elements">
+	<button class="submit" md-button (click)="next()">Submit</button>
+	<p *ngIf="nexttext!='Submit'" >Please click on Next to go to Game selection</p>
+	  <div   class="err" *ngFor="let e of err">
+		{{e}}
+		</div>
+	</md-card>
+ </form>
+ 
+ <div *ngIf="addedSuccesfully">
+	<h3 class="blue">Congratulations You are succussfully Registered.<br>Your Participant Registration Number <br><p class="regNo">{{registrationID}}</p></h3>
+	
+ </div>

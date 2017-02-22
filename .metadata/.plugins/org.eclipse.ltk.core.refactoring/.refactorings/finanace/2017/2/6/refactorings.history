@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;images&apos; to &apos;css&apos;&#x0A;- Original project: &apos;finanace&apos;&#x0A;- Destination element: &apos;css&apos;&#x0A;- Original element: &apos;images&apos;" description="Copy folder" element1="WebContent/WEB-INF/css/images" files="0" flags="589830" folders="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1486749428244" target="/SportManagmentSystem/WebContent/css" units="0" version="1.0"/>
+</session>
